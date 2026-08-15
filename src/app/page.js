@@ -63,7 +63,7 @@ export default function HomePage() {
 
   return (
     <main style={{ backgroundColor: "#050505", minHeight: "100vh", position: "relative" }}>
-      {/* Navigation */}
+      {/* Fixed Sticky Header Navigation */}
       <Navbar onOpenBooking={() => openBookingWithService()} />
 
       {/* =========================================================================
@@ -75,8 +75,8 @@ export default function HomePage() {
           minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "flex-end",
-          padding: "160px 0 60px",
+          justifyContent: "center",
+          padding: "140px 0 60px",
           overflow: "hidden",
           backgroundColor: "#050505",
         }}
@@ -87,10 +87,10 @@ export default function HomePage() {
             position: "absolute",
             top: 0,
             right: 0,
-            width: "60%",
+            width: "65%",
             height: "100%",
             zIndex: 1,
-            opacity: 0.38,
+            opacity: 0.35,
             maskImage: "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%)",
             WebkitMaskImage: "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%)",
           }}
@@ -112,7 +112,7 @@ export default function HomePage() {
             left: 0,
             right: 0,
             bottom: 0,
-            background: "radial-gradient(circle at 20% 50%, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.4) 60%, rgba(5,5,5,0.95) 100%)",
+            background: "radial-gradient(circle at 20% 50%, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.45) 60%, rgba(5,5,5,0.98) 100%)",
             zIndex: 2,
           }}
         />
@@ -122,18 +122,18 @@ export default function HomePage() {
             style={{
               display: "grid",
               gridTemplateColumns: "auto 1fr auto",
-              gap: "48px",
-              alignItems: "flex-end",
+              gap: "40px",
+              alignItems: "center",
             }}
-            className="hero-grid"
+            className="hero-grid animate-fade-up"
           >
-            {/* Left Vertical Indicator (Evan Luthra style) */}
+            {/* Left Vertical Indicator */}
             <div className="vertical-scroll-label desktop-only">
               Scroll To Explore
             </div>
 
             {/* Center Authority Headline */}
-            <div style={{ maxWidth: "780px" }}>
+            <div style={{ maxWidth: "760px" }}>
               <div
                 style={{
                   display: "inline-flex",
@@ -141,7 +141,7 @@ export default function HomePage() {
                   gap: "8px",
                   border: "1px solid rgba(184, 134, 40, 0.4)",
                   padding: "6px 14px",
-                  marginBottom: "24px",
+                  marginBottom: "20px",
                   backgroundColor: "rgba(184, 134, 40, 0.08)",
                 }}
               >
@@ -162,9 +162,9 @@ export default function HomePage() {
               <h1
                 className="font-cinzel"
                 style={{
-                  fontSize: "clamp(2.4rem, 5.5vw, 4.8rem)",
+                  fontSize: "clamp(2.2rem, 5.2vw, 4.5rem)",
                   fontWeight: 700,
-                  lineHeight: 1.05,
+                  lineHeight: 1.08,
                   letterSpacing: "0.02em",
                   color: "#ffffff",
                   marginBottom: "20px",
@@ -177,24 +177,39 @@ export default function HomePage() {
               <p
                 style={{
                   color: "var(--text-silver)",
-                  fontSize: "clamp(1rem, 1.3vw, 1.25rem)",
+                  fontSize: "clamp(0.95rem, 1.25vw, 1.2rem)",
                   fontWeight: 300,
                   lineHeight: 1.6,
-                  maxWidth: "640px",
+                  maxWidth: "620px",
+                  marginBottom: "28px",
                 }}
               >
                 CA Nikil advises ambitious founders, high-growth enterprises, and HNIs. Over ₹120 Crores protected in strategic tax compliance, statutory audits, and corporate restructuring.
               </p>
+
+              {/* Mobile Quick Action row */}
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }} className="hero-mobile-actions">
+                <button
+                  onClick={() => openBookingWithService()}
+                  className="btn-gold"
+                >
+                  <span>Book Free Consultation</span>
+                  <ArrowRight size={16} />
+                </button>
+                <Link href="/services" className="btn-outline">
+                  <span>Explore Practice Areas</span>
+                </Link>
+              </div>
             </div>
 
-            {/* Right White Card Overlay (Evan Luthra style screenshot 1) */}
+            {/* Right White Card Overlay (Evan Luthra style) */}
             <div
               className="hero-side-card"
               style={{
                 width: "360px",
                 backgroundColor: "#ffffff",
                 color: "#000000",
-                padding: "32px 28px",
+                padding: "32px 26px",
                 boxShadow: "0 25px 60px rgba(0,0,0,0.8)",
                 display: "flex",
                 flexDirection: "column",
@@ -216,7 +231,7 @@ export default function HomePage() {
               <h2
                 className="font-cinzel"
                 style={{
-                  fontSize: "1.4rem",
+                  fontSize: "1.35rem",
                   fontWeight: 700,
                   lineHeight: 1.25,
                   color: "#000000",
@@ -250,13 +265,13 @@ export default function HomePage() {
       ========================================================================== */}
       <section
         style={{
-          padding: "100px 0",
+          padding: "clamp(60px, 8vw, 100px) 0",
           backgroundColor: "#000000",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
         }}
       >
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+          <div style={{ textAlign: "center", marginBottom: "50px" }}>
             <span
               style={{
                 fontSize: "0.75rem",
@@ -265,12 +280,12 @@ export default function HomePage() {
                 color: "var(--accent-gold)",
                 fontWeight: 700,
                 display: "block",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               The 3-Pillar Framework
             </span>
-            <h2 className="font-cinzel" style={{ fontSize: "2.4rem", fontWeight: 700, color: "#ffffff" }}>
+            <h2 className="font-cinzel" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", fontWeight: 700, color: "#ffffff" }}>
               HOW WE DELIVER CERTAINTY
             </h2>
           </div>
@@ -279,18 +294,11 @@ export default function HomePage() {
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "32px",
+              gap: "24px",
             }}
           >
             {/* Step 01 */}
-            <div
-              style={{
-                backgroundColor: "#0a0a0d",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                padding: "40px 32px",
-                position: "relative",
-              }}
-            >
+            <div className="card-luxury">
               <div className="step-number">01.</div>
               <h3 className="step-title">DIAGNOSE & AUDIT</h3>
               <p style={{ color: "var(--text-silver)", fontSize: "0.9rem", lineHeight: 1.7 }}>
@@ -299,14 +307,7 @@ export default function HomePage() {
             </div>
 
             {/* Step 02 */}
-            <div
-              style={{
-                backgroundColor: "#0a0a0d",
-                border: "1px solid rgba(184, 134, 40, 0.3)",
-                padding: "40px 32px",
-                position: "relative",
-              }}
-            >
+            <div className="card-luxury" style={{ borderColor: "rgba(184, 134, 40, 0.35)" }}>
               <div className="step-number" style={{ color: "var(--accent-gold)" }}>02.</div>
               <h3 className="step-title" style={{ color: "#ffffff" }}>STRATEGIZE & SHIELD</h3>
               <p style={{ color: "var(--text-silver)", fontSize: "0.9rem", lineHeight: 1.7 }}>
@@ -315,14 +316,7 @@ export default function HomePage() {
             </div>
 
             {/* Step 03 */}
-            <div
-              style={{
-                backgroundColor: "#0a0a0d",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                padding: "40px 32px",
-                position: "relative",
-              }}
-            >
+            <div className="card-luxury">
               <div className="step-number">03.</div>
               <h3 className="step-title">EXECUTE & GROW</h3>
               <p style={{ color: "var(--text-silver)", fontSize: "0.9rem", lineHeight: 1.7 }}>
@@ -336,13 +330,13 @@ export default function HomePage() {
       {/* =========================================================================
           AUTHORITY STORY / PERSONAL BRAND (Evan Luthra style split block)
       ========================================================================== */}
-      <section style={{ backgroundColor: "#ffffff", color: "#000000", padding: "100px 0" }}>
+      <section style={{ backgroundColor: "#ffffff", color: "#000000", padding: "clamp(60px, 8vw, 100px) 0" }}>
         <div className="container">
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "60px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: "48px",
               alignItems: "center",
             }}
           >
@@ -352,7 +346,7 @@ export default function HomePage() {
                 style={{
                   position: "relative",
                   width: "100%",
-                  height: "500px",
+                  height: "440px",
                   boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
                 }}
               >
@@ -364,17 +358,14 @@ export default function HomePage() {
                 />
               </div>
 
-              {/* Black quote banner overlay */}
+              {/* Quote banner */}
               <div
                 style={{
-                  position: "absolute",
-                  bottom: "-30px",
-                  left: "20px",
-                  right: "20px",
                   backgroundColor: "#000000",
                   color: "#ffffff",
-                  padding: "24px 28px",
+                  padding: "20px 24px",
                   borderLeft: "4px solid #b88628",
+                  marginTop: "16px",
                 }}
               >
                 <p className="font-cormorant" style={{ fontSize: "1.15rem", fontStyle: "italic", lineHeight: 1.4 }}>
@@ -397,7 +388,7 @@ export default function HomePage() {
             </div>
 
             {/* Right Story Content */}
-            <div style={{ paddingTop: "20px" }}>
+            <div>
               <span
                 style={{
                   fontSize: "0.78rem",
@@ -406,7 +397,7 @@ export default function HomePage() {
                   textTransform: "uppercase",
                   color: "#666666",
                   display: "block",
-                  marginBottom: "12px",
+                  marginBottom: "10px",
                 }}
               >
                 Executive Philosophy
@@ -415,38 +406,38 @@ export default function HomePage() {
               <h2
                 className="font-cinzel"
                 style={{
-                  fontSize: "2.4rem",
+                  fontSize: "clamp(1.8rem, 3.2vw, 2.4rem)",
                   fontWeight: 700,
                   lineHeight: 1.2,
                   color: "#000000",
-                  marginBottom: "24px",
+                  marginBottom: "20px",
                 }}
               >
                 FINANCIAL MASTERY MEETS UNCOMPROMISING PRECISION
               </h2>
 
-              <p style={{ fontSize: "1rem", color: "#333333", lineHeight: 1.7, marginBottom: "16px" }}>
+              <p style={{ fontSize: "0.95rem", color: "#333333", lineHeight: 1.7, marginBottom: "16px" }}>
                 CA Nikil established this advisory practice with a singular vision: to dismantle the antiquated, reactive model of accounting and provide founders, corporates, and high-net-worth individuals with institutional-grade financial strategy.
               </p>
 
-              <p style={{ fontSize: "1rem", color: "#555555", lineHeight: 1.7, marginBottom: "32px" }}>
+              <p style={{ fontSize: "0.95rem", color: "#555555", lineHeight: 1.7, marginBottom: "28px" }}>
                 Having steered over 500+ businesses across hospitality, technology, real estate, and export sectors, CA Nikil pairs rigorous ICAI statutory excellence with an aggressive focus on legitimate tax minimization and seamless regulatory compliance.
               </p>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", marginBottom: "36px" }}>
-                <div style={{ borderLeft: "2px solid #000000", paddingLeft: "16px" }}>
-                  <span className="font-cinzel" style={{ fontSize: "1.8rem", fontWeight: 700, color: "#000000", display: "block" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "32px" }}>
+                <div style={{ borderLeft: "2px solid #000000", paddingLeft: "14px" }}>
+                  <span className="font-cinzel" style={{ fontSize: "1.6rem", fontWeight: 700, color: "#000000", display: "block" }}>
                     ₹120+ Cr
                   </span>
-                  <span style={{ fontSize: "0.8rem", color: "#666666", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  <span style={{ fontSize: "0.75rem", color: "#666666", textTransform: "uppercase", letterSpacing: "0.05em" }}>
                     Tax Saved Legally
                   </span>
                 </div>
-                <div style={{ borderLeft: "2px solid #000000", paddingLeft: "16px" }}>
-                  <span className="font-cinzel" style={{ fontSize: "1.8rem", fontWeight: 700, color: "#000000", display: "block" }}>
+                <div style={{ borderLeft: "2px solid #000000", paddingLeft: "14px" }}>
+                  <span className="font-cinzel" style={{ fontSize: "1.6rem", fontWeight: 700, color: "#000000", display: "block" }}>
                     500+
                   </span>
-                  <span style={{ fontSize: "0.8rem", color: "#666666", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                  <span style={{ fontSize: "0.75rem", color: "#666666", textTransform: "uppercase", letterSpacing: "0.05em" }}>
                     Enterprises Advised
                   </span>
                 </div>
@@ -455,7 +446,6 @@ export default function HomePage() {
               <button
                 onClick={() => openBookingWithService()}
                 className="btn-dark"
-                style={{ display: "inline-flex" }}
               >
                 <span>Consult CA Nikil</span>
                 <ArrowRight size={16} />
@@ -471,13 +461,13 @@ export default function HomePage() {
       <section
         id="services"
         style={{
-          padding: "120px 0",
+          padding: "clamp(60px, 8vw, 110px) 0",
           backgroundColor: "#050505",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
         }}
       >
         <div className="container">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "60px", flexWrap: "wrap", gap: "20px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "48px", flexWrap: "wrap", gap: "20px" }}>
             <div>
               <span
                 style={{
@@ -487,12 +477,12 @@ export default function HomePage() {
                   color: "var(--accent-gold)",
                   fontWeight: 700,
                   display: "block",
-                  marginBottom: "12px",
+                  marginBottom: "10px",
                 }}
               >
                 Core Practice Areas
               </span>
-              <h2 className="font-cinzel" style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, color: "#ffffff" }}>
+              <h2 className="font-cinzel" style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.8rem)", fontWeight: 700, color: "#ffffff" }}>
                 COMPREHENSIVE CA SERVICES
               </h2>
             </div>
@@ -507,8 +497,8 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-              gap: "28px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
+              gap: "24px",
             }}
           >
             {servicesData.map((svc) => (
@@ -522,13 +512,13 @@ export default function HomePage() {
                 }}
               >
                 <div>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
                     <span className="font-cinzel" style={{ fontSize: "1.2rem", color: "var(--accent-gold)" }}>
                       {svc.number}
                     </span>
                     <span
                       style={{
-                        fontSize: "0.68rem",
+                        fontSize: "0.65rem",
                         letterSpacing: "0.15em",
                         textTransform: "uppercase",
                         color: "var(--text-silver)",
@@ -543,28 +533,28 @@ export default function HomePage() {
                   <h3
                     className="font-cinzel"
                     style={{
-                      fontSize: "1.35rem",
+                      fontSize: "1.25rem",
                       fontWeight: 700,
                       color: "#ffffff",
-                      marginBottom: "12px",
+                      marginBottom: "10px",
                     }}
                   >
                     {svc.title}
                   </h3>
 
-                  <p style={{ color: "var(--text-silver)", fontSize: "0.88rem", lineHeight: 1.65, marginBottom: "24px" }}>
+                  <p style={{ color: "var(--text-silver)", fontSize: "0.88rem", lineHeight: 1.6, marginBottom: "20px" }}>
                     {svc.description}
                   </p>
                 </div>
 
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "18px" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: "16px", flexWrap: "wrap", gap: "10px" }}>
                   <button
                     onClick={() => setActiveServiceModal(svc)}
                     style={{
                       background: "none",
                       border: "none",
                       color: "#ffffff",
-                      fontSize: "0.8rem",
+                      fontSize: "0.78rem",
                       fontWeight: 600,
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
@@ -585,7 +575,7 @@ export default function HomePage() {
                       background: "none",
                       border: "none",
                       color: "var(--accent-gold)",
-                      fontSize: "0.8rem",
+                      fontSize: "0.78rem",
                       fontWeight: 700,
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
@@ -605,7 +595,7 @@ export default function HomePage() {
       {/* =========================================================================
           INTERACTIVE TAX CALCULATOR (FY 2024-25 / AY 2025-26)
       ========================================================================== */}
-      <section style={{ padding: "100px 0", backgroundColor: "#09090c" }}>
+      <section style={{ padding: "clamp(60px, 8vw, 100px) 0", backgroundColor: "#09090c" }}>
         <div className="container">
           <TaxCalculator onOpenBooking={() => openBookingWithService("Income Tax Return Filing")} />
         </div>
@@ -614,7 +604,7 @@ export default function HomePage() {
       {/* =========================================================================
           CORPORATE ADVISORY & BOARDROOM SHOWCASE
       ========================================================================== */}
-      <section style={{ position: "relative", padding: "120px 0", overflow: "hidden" }}>
+      <section style={{ position: "relative", padding: "clamp(70px, 8vw, 120px) 0", overflow: "hidden" }}>
         {/* Background Boardroom Image with Dark Filter */}
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, zIndex: 1 }}>
           <Image
@@ -636,7 +626,7 @@ export default function HomePage() {
         </div>
 
         <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <div style={{ maxWidth: "720px", marginBottom: "60px" }}>
+          <div style={{ maxWidth: "720px", marginBottom: "48px" }}>
             <span
               style={{
                 fontSize: "0.75rem",
@@ -645,7 +635,7 @@ export default function HomePage() {
                 color: "var(--accent-gold)",
                 fontWeight: 700,
                 display: "block",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               Institutional Excellence
@@ -653,16 +643,16 @@ export default function HomePage() {
             <h2
               className="font-cinzel"
               style={{
-                fontSize: "clamp(2rem, 3.5vw, 2.8rem)",
+                fontSize: "clamp(1.8rem, 3.2vw, 2.6rem)",
                 fontWeight: 700,
                 color: "#ffffff",
                 lineHeight: 1.2,
-                marginBottom: "20px",
+                marginBottom: "16px",
               }}
             >
               TRUSTED BY ENTERPRISES, VALUED BY BOARDS
             </h2>
-            <p style={{ color: "var(--text-silver)", fontSize: "1rem", lineHeight: 1.6 }}>
+            <p style={{ color: "var(--text-silver)", fontSize: "0.95rem", lineHeight: 1.6 }}>
               Whether you are scaling from Seed to Series B, expanding cross-border into India, or navigating a high-stakes statutory tax audit, our senior advisory team ensures complete peace of mind.
             </p>
           </div>
@@ -671,24 +661,24 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "24px",
-              marginBottom: "48px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: "20px",
+              marginBottom: "40px",
             }}
           >
-            <div style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", padding: "28px" }}>
-              <ShieldCheck size={28} color="#b88628" style={{ marginBottom: "14px" }} />
-              <h3 className="font-cinzel" style={{ fontSize: "1.1rem", color: "#ffffff", marginBottom: "8px" }}>
+            <div className="card-luxury">
+              <ShieldCheck size={26} color="#b88628" style={{ marginBottom: "12px" }} />
+              <h3 className="font-cinzel" style={{ fontSize: "1.05rem", color: "#ffffff", marginBottom: "8px" }}>
                 Zero Scrutiny Shield
               </h3>
               <p style={{ color: "var(--text-silver)", fontSize: "0.85rem", lineHeight: 1.5 }}>
-                100% data reconciliation across AIS, 26AS, GSTR-2B, and audited general ledgers before any filing.
+                100% data reconciliation across AIS, 26AS, GSTR-2B, and audited general ledgers.
               </p>
             </div>
 
-            <div style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", padding: "28px" }}>
-              <TrendingUp size={28} color="#b88628" style={{ marginBottom: "14px" }} />
-              <h3 className="font-cinzel" style={{ fontSize: "1.1rem", color: "#ffffff", marginBottom: "8px" }}>
+            <div className="card-luxury">
+              <TrendingUp size={26} color="#b88628" style={{ marginBottom: "12px" }} />
+              <h3 className="font-cinzel" style={{ fontSize: "1.05rem", color: "#ffffff", marginBottom: "8px" }}>
                 Proactive Tax Alpha
               </h3>
               <p style={{ color: "var(--text-silver)", fontSize: "0.85rem", lineHeight: 1.5 }}>
@@ -696,34 +686,34 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", padding: "28px" }}>
-              <Clock size={28} color="#b88628" style={{ marginBottom: "14px" }} />
-              <h3 className="font-cinzel" style={{ fontSize: "1.1rem", color: "#ffffff", marginBottom: "8px" }}>
+            <div className="card-luxury">
+              <Clock size={26} color="#b88628" style={{ marginBottom: "12px" }} />
+              <h3 className="font-cinzel" style={{ fontSize: "1.05rem", color: "#ffffff", marginBottom: "8px" }}>
                 99.8% On-Time Record
               </h3>
               <p style={{ color: "var(--text-silver)", fontSize: "0.85rem", lineHeight: 1.5 }}>
-                Automated regulatory calendars preventing late fees, interest penalties, and director disqualifications.
+                Automated regulatory calendars preventing late fees and interest penalties.
               </p>
             </div>
 
-            <div style={{ backgroundColor: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.12)", padding: "28px" }}>
-              <Users size={28} color="#b88628" style={{ marginBottom: "14px" }} />
-              <h3 className="font-cinzel" style={{ fontSize: "1.1rem", color: "#ffffff", marginBottom: "8px" }}>
+            <div className="card-luxury">
+              <Users size={26} color="#b88628" style={{ marginBottom: "12px" }} />
+              <h3 className="font-cinzel" style={{ fontSize: "1.05rem", color: "#ffffff", marginBottom: "8px" }}>
                 Dedicated CA Partner
               </h3>
               <p style={{ color: "var(--text-silver)", fontSize: "0.85rem", lineHeight: 1.5 }}>
-                Direct access to senior Chartered Accountants, not junior ticket queues or chatbots.
+                Direct access to senior Chartered Accountants, not junior ticket queues.
               </p>
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
             <button onClick={() => openBookingWithService()} className="btn-gold">
               <span>Schedule Strategy Call</span>
               <ArrowRight size={16} />
             </button>
-            <a href="tel:+919819267015" className="btn-outline">
-              <span>Emergency Tax Hotline: +91 98192 67015</span>
+            <a href="tel:+917416414358" className="btn-outline">
+              <span>Emergency Tax Hotline: +91 7416 414 358</span>
             </a>
           </div>
         </div>
@@ -732,9 +722,9 @@ export default function HomePage() {
       {/* =========================================================================
           CLIENT TESTIMONIALS & CASE PROOF (5.0 Google Rating)
       ========================================================================== */}
-      <section style={{ padding: "100px 0", backgroundColor: "#ffffff", color: "#000000" }}>
+      <section style={{ padding: "clamp(60px, 8vw, 100px) 0", backgroundColor: "#ffffff", color: "#000000" }}>
         <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+          <div style={{ textAlign: "center", marginBottom: "50px" }}>
             <span
               style={{
                 fontSize: "0.75rem",
@@ -743,40 +733,40 @@ export default function HomePage() {
                 color: "#666666",
                 fontWeight: 700,
                 display: "block",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               Proven Track Record
             </span>
-            <h2 className="font-cinzel" style={{ fontSize: "2.4rem", fontWeight: 700, color: "#000000" }}>
+            <h2 className="font-cinzel" style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.4rem)", fontWeight: 700, color: "#000000" }}>
               WHAT OUR CLIENTS SAY
             </h2>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", color: "#b88628", fontWeight: 700 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "10px", color: "#b88628", fontWeight: 700 }}>
               <span>★★★★★</span>
-              <span style={{ color: "#222222", fontSize: "0.88rem" }}>5.0 Rating Across 180+ Verified Corporate Clients</span>
+              <span style={{ color: "#222222", fontSize: "0.85rem" }}>5.0 Rating Across 180+ Verified Corporate Clients</span>
             </div>
           </div>
 
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "28px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
+              gap: "24px",
             }}
           >
             {/* Review 1 */}
             <div className="card-white" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
-                <div style={{ color: "#b88628", fontSize: "1.1rem", marginBottom: "14px" }}>★★★★★</div>
-                <p style={{ color: "#333333", fontSize: "0.92rem", lineHeight: 1.65, fontStyle: "italic", marginBottom: "20px" }}>
-                  "CA Nikil restructured our restaurant chain's GST and supply chain accounting. His proactive advice saved us over ₹35 Lakhs in legitimate tax deductions during our multi-city expansion. Absolute master of his craft."
+                <div style={{ color: "#b88628", fontSize: "1.1rem", marginBottom: "12px" }}>★★★★★</div>
+                <p style={{ color: "#333333", fontSize: "0.9rem", lineHeight: 1.6, fontStyle: "italic", marginBottom: "18px" }}>
+                  "CA Nikil restructured our restaurant chain's GST and supply chain accounting. His proactive advice saved us over ₹35 Lakhs in legitimate tax deductions during our multi-city expansion."
                 </p>
               </div>
-              <div style={{ borderTop: "1px solid #eaeaea", paddingTop: "14px" }}>
-                <span className="font-cinzel" style={{ fontSize: "0.95rem", fontWeight: 700, color: "#000000", display: "block" }}>
+              <div style={{ borderTop: "1px solid #eaeaea", paddingTop: "12px" }}>
+                <span className="font-cinzel" style={{ fontSize: "0.92rem", fontWeight: 700, color: "#000000", display: "block" }}>
                   Vikramaditya S.
                 </span>
-                <span style={{ fontSize: "0.78rem", color: "#777777", textTransform: "uppercase" }}>
+                <span style={{ fontSize: "0.75rem", color: "#777777", textTransform: "uppercase" }}>
                   Founder, Premium Hospitality Group
                 </span>
               </div>
@@ -785,16 +775,16 @@ export default function HomePage() {
             {/* Review 2 */}
             <div className="card-white" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
-                <div style={{ color: "#b88628", fontSize: "1.1rem", marginBottom: "14px" }}>★★★★★</div>
-                <p style={{ color: "#333333", fontSize: "0.92rem", lineHeight: 1.65, fontStyle: "italic", marginBottom: "20px" }}>
-                  "As an NRI selling ancestral property in Mumbai, navigating Section 195 Lower TDS and Form 15CA/CB felt daunting. CA Nikil's firm executed everything seamlessly, saving us huge delays and tax leakages."
+                <div style={{ color: "#b88628", fontSize: "1.1rem", marginBottom: "12px" }}>★★★★★</div>
+                <p style={{ color: "#333333", fontSize: "0.92rem", lineHeight: 1.6, fontStyle: "italic", marginBottom: "18px" }}>
+                  "As an NRI selling ancestral property in Mumbai, navigating Section 195 Lower TDS and Form 15CA/CB felt daunting. CA Nikil's firm executed everything seamlessly, saving us huge delays."
                 </p>
               </div>
-              <div style={{ borderTop: "1px solid #eaeaea", paddingTop: "14px" }}>
-                <span className="font-cinzel" style={{ fontSize: "0.95rem", fontWeight: 700, color: "#000000", display: "block" }}>
+              <div style={{ borderTop: "1px solid #eaeaea", paddingTop: "12px" }}>
+                <span className="font-cinzel" style={{ fontSize: "0.92rem", fontWeight: 700, color: "#000000", display: "block" }}>
                   Ananya & Rajesh K.
                 </span>
-                <span style={{ fontSize: "0.78rem", color: "#777777", textTransform: "uppercase" }}>
+                <span style={{ fontSize: "0.75rem", color: "#777777", textTransform: "uppercase" }}>
                   NRI Real Estate Investors (Dubai / UK)
                 </span>
               </div>
@@ -803,16 +793,16 @@ export default function HomePage() {
             {/* Review 3 */}
             <div className="card-white" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
-                <div style={{ color: "#b88628", fontSize: "1.1rem", marginBottom: "14px" }}>★★★★★</div>
-                <p style={{ color: "#333333", fontSize: "0.92rem", lineHeight: 1.65, fontStyle: "italic", marginBottom: "20px" }}>
+                <div style={{ color: "#b88628", fontSize: "1.1rem", marginBottom: "12px" }}>★★★★★</div>
+                <p style={{ color: "#333333", fontSize: "0.9rem", lineHeight: 1.6, fontStyle: "italic", marginBottom: "18px" }}>
                   "From Private Limited incorporation to securing DPIIT Startup India certification, Nikil and his team functioned as our outsourced CFO. Their response speed and audit rigor are unparalleled."
                 </p>
               </div>
-              <div style={{ borderTop: "1px solid #eaeaea", paddingTop: "14px" }}>
-                <span className="font-cinzel" style={{ fontSize: "0.95rem", fontWeight: 700, color: "#000000", display: "block" }}>
+              <div style={{ borderTop: "1px solid #eaeaea", paddingTop: "12px" }}>
+                <span className="font-cinzel" style={{ fontSize: "0.92rem", fontWeight: 700, color: "#000000", display: "block" }}>
                   Siddharth Mehta
                 </span>
-                <span style={{ fontSize: "0.78rem", color: "#777777", textTransform: "uppercase" }}>
+                <span style={{ fontSize: "0.75rem", color: "#777777", textTransform: "uppercase" }}>
                   Co-Founder & CEO, FinTech SaaS
                 </span>
               </div>
@@ -824,9 +814,9 @@ export default function HomePage() {
       {/* =========================================================================
           FAQ ACCORDION SECTION
       ========================================================================== */}
-      <section style={{ padding: "100px 0", backgroundColor: "#08080a" }}>
+      <section style={{ padding: "clamp(60px, 8vw, 100px) 0", backgroundColor: "#08080a" }}>
         <div className="container" style={{ maxWidth: "880px" }}>
-          <div style={{ textAlign: "center", marginBottom: "50px" }}>
+          <div style={{ textAlign: "center", marginBottom: "48px" }}>
             <span
               style={{
                 fontSize: "0.75rem",
@@ -835,44 +825,44 @@ export default function HomePage() {
                 color: "var(--accent-gold)",
                 fontWeight: 700,
                 display: "block",
-                marginBottom: "12px",
+                marginBottom: "10px",
               }}
             >
               Clarity & Transparency
             </span>
-            <h2 className="font-cinzel" style={{ fontSize: "2.2rem", fontWeight: 700, color: "#ffffff" }}>
+            <h2 className="font-cinzel" style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.2rem)", fontWeight: 700, color: "#ffffff" }}>
               FREQUENTLY ASKED QUESTIONS
             </h2>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             {faqs.map((faq, index) => {
               const isOpen = activeFaq === index;
               return (
                 <div
                   key={index}
                   style={{
-                    backgroundColor: isOpen ? "#0f0f14" : "#0a0a0d",
-                    border: isOpen ? "1px solid rgba(255,255,255,0.2)" : "1px solid rgba(255,255,255,0.08)",
-                    transition: "all 0.2s ease",
+                    backgroundColor: isOpen ? "#0e0e13" : "#0a0a0d",
+                    border: isOpen ? "1px solid rgba(184, 134, 40, 0.4)" : "1px solid rgba(255,255,255,0.08)",
+                    transition: "all 0.25s ease",
                   }}
                 >
                   <button
                     onClick={() => setActiveFaq(isOpen ? null : index)}
                     style={{
                       width: "100%",
-                      padding: "20px 24px",
+                      padding: "18px 20px",
                       background: "none",
                       border: "none",
                       color: "#ffffff",
                       textAlign: "left",
-                      fontSize: "1rem",
+                      fontSize: "0.95rem",
                       fontWeight: 600,
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
                       cursor: "pointer",
-                      gap: "16px",
+                      gap: "14px",
                     }}
                   >
                     <span>{faq.q}</span>
@@ -880,14 +870,14 @@ export default function HomePage() {
                       size={18}
                       style={{
                         transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-                        transition: "transform 0.2s ease",
+                        transition: "transform 0.25s ease",
                         flexShrink: 0,
                         color: isOpen ? "var(--accent-gold)" : "#ffffff",
                       }}
                     />
                   </button>
                   {isOpen && (
-                    <div style={{ padding: "0 24px 24px", color: "var(--text-silver)", fontSize: "0.92rem", lineHeight: 1.7 }}>
+                    <div style={{ padding: "0 20px 20px", color: "var(--text-silver)", fontSize: "0.9rem", lineHeight: 1.65 }}>
                       {faq.a}
                     </div>
                   )}
@@ -903,7 +893,7 @@ export default function HomePage() {
       ========================================================================== */}
       <section
         style={{
-          padding: "100px 0",
+          padding: "clamp(60px, 8vw, 100px) 0",
           backgroundColor: "#000000",
           borderTop: "1px solid rgba(255, 255, 255, 0.1)",
           textAlign: "center",
@@ -918,7 +908,7 @@ export default function HomePage() {
               color: "var(--accent-gold)",
               fontWeight: 700,
               display: "block",
-              marginBottom: "16px",
+              marginBottom: "14px",
             }}
           >
             Confidential Consultation
@@ -927,36 +917,36 @@ export default function HomePage() {
           <h2
             className="font-cinzel"
             style={{
-              fontSize: "clamp(2.2rem, 4vw, 3.2rem)",
+              fontSize: "clamp(2rem, 3.8vw, 3rem)",
               fontWeight: 700,
               color: "#ffffff",
-              marginBottom: "20px",
+              marginBottom: "18px",
               lineHeight: 1.15,
             }}
           >
             LET'S ARCHITECT YOUR TAX & CORPORATE CERTAINTY
           </h2>
 
-          <p style={{ color: "var(--text-silver)", fontSize: "1.05rem", lineHeight: 1.6, marginBottom: "36px" }}>
+          <p style={{ color: "var(--text-silver)", fontSize: "1rem", lineHeight: 1.6, marginBottom: "32px" }}>
             Speak directly with CA Nikil. Discuss your business financials, upcoming tax deadlines, or enterprise audit requirements.
           </p>
 
-          <div style={{ display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "14px", flexWrap: "wrap" }}>
             <button
               onClick={() => openBookingWithService()}
               className="btn-gold"
-              style={{ padding: "16px 36px", fontSize: "0.9rem" }}
+              style={{ padding: "15px 32px", fontSize: "0.85rem" }}
             >
               <span>Schedule 1-on-1 Strategy Session</span>
               <ArrowRight size={18} />
             </button>
 
             <a
-              href="https://wa.me/919819267015?text=Hello%20CA%20Nikil%2C%20I%20would%20like%20to%20book%20a%20consultation."
+              href="https://wa.me/917416414358?text=Hello%20CA%20Nikil%2C%20I%20would%20like%20to%20book%20a%20consultation."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"
-              style={{ padding: "16px 32px", fontSize: "0.9rem", display: "flex", alignItems: "center", gap: "8px" }}
+              style={{ padding: "15px 28px", fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "8px" }}
             >
               <MessageSquare size={18} />
               <span>Instant WhatsApp Connect</span>
@@ -965,7 +955,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Floating Actions (WhatsApp & Mobile Bar) */}
+      {/* Floating Actions (WhatsApp & Mobile Sticky Bar) */}
       <FloatingActions onOpenBooking={() => openBookingWithService()} />
 
       {/* Booking Modal */}
@@ -991,10 +981,11 @@ export default function HomePage() {
         @media (max-width: 991px) {
           :global(.hero-grid) {
             grid-template-columns: 1fr !important;
+            text-align: left;
           }
           :global(.hero-side-card) {
             width: 100% !important;
-            margin-top: 24px;
+            margin-top: 16px;
           }
           :global(.desktop-only) {
             display: none !important;

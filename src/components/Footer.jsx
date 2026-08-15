@@ -163,8 +163,8 @@ export default function Footer({ onOpenBooking }) {
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <Phone size={16} color="#ffffff" style={{ flexShrink: 0 }} />
-                <a href="tel:+919819267015" style={{ color: "#ffffff", textDecoration: "none" }}>
-                  +91 98192 67015
+                <a href="tel:+917416414358" style={{ color: "#ffffff", textDecoration: "none" }}>
+                  +91 7416 414 358
                 </a>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>

@@ -38,7 +38,7 @@ export default function ContactPage() {
     const text = encodeURIComponent(
       `Hello CA Nikil & Associates,\n\nI would like to schedule an advisory call:\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Service: ${formData.service}\n• Query: ${formData.message || "Tax consultation"}`
     );
-    window.open(`https://wa.me/919819267015?text=${text}`, "_blank");
+    window.open(`https://wa.me/917416414358?text=${text}`, "_blank");
   };
 
   return (
@@ -48,7 +48,7 @@ export default function ContactPage() {
       {/* Header */}
       <section
         style={{
-          padding: "160px 0 80px",
+          padding: "clamp(120px, 14vw, 160px) 0 clamp(40px, 6vw, 80px)",
           backgroundColor: "#08080a",
           borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
           textAlign: "center",
@@ -71,16 +71,16 @@ export default function ContactPage() {
           <h1
             className="font-cinzel"
             style={{
-              fontSize: "clamp(2.4rem, 4.5vw, 3.8rem)",
+              fontSize: "clamp(2rem, 4.5vw, 3.6rem)",
               fontWeight: 700,
               color: "#ffffff",
-              marginBottom: "20px",
-              lineHeight: 1.1,
+              marginBottom: "16px",
+              lineHeight: 1.15,
             }}
           >
             SCHEDULE PRIVATE CONSULTATION
           </h1>
-          <p style={{ color: "var(--text-silver)", fontSize: "1.05rem", lineHeight: 1.6 }}>
+          <p style={{ color: "var(--text-silver)", fontSize: "1rem", lineHeight: 1.6 }}>
             Reserve a confidential session with CA Nikil to review your corporate financials, audit requirements, or tax planning strategy.
           </p>
         </div>
@@ -89,13 +89,13 @@ export default function ContactPage() {
       <PressTicker onOpenBooking={() => {}} />
 
       {/* Main Contact Content */}
-      <section style={{ padding: "100px 0" }}>
+      <section style={{ padding: "clamp(50px, 8vw, 90px) 0" }}>
         <div className="container">
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "60px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: "40px",
             }}
           >
             {/* Left: Office & Direct Line Details */}
@@ -117,57 +117,57 @@ export default function ContactPage() {
               <h2
                 className="font-cinzel"
                 style={{
-                  fontSize: "2.2rem",
+                  fontSize: "clamp(1.8rem, 3.2vw, 2.2rem)",
                   fontWeight: 700,
                   color: "#ffffff",
-                  marginBottom: "24px",
+                  marginBottom: "18px",
                 }}
               >
                 MUMBAI OFFICE
               </h2>
 
-              <p style={{ color: "var(--text-silver)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "36px" }}>
+              <p style={{ color: "var(--text-silver)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "28px" }}>
                 Our corporate advisory practice is headquartered in Mumbai, serving domestic corporate entities and global NRI clients with seamless remote and in-person advisory.
               </p>
 
-              <div style={{ display: "flex", flexDirection: "column", gap: "24px", marginBottom: "40px" }}>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "16px" }}>
-                  <div style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "12px", border: "1px solid rgba(255,255,255,0.12)" }}>
-                    <MapPin size={22} color="#ffffff" />
+              <div style={{ display: "flex", flexDirection: "column", gap: "20px", marginBottom: "32px" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
+                  <div style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "10px", border: "1px solid rgba(255,255,255,0.12)" }}>
+                    <MapPin size={20} color="#ffffff" />
                   </div>
                   <div>
-                    <span style={{ fontSize: "0.75rem", color: "var(--text-silver)", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "4px" }}>
+                    <span style={{ fontSize: "0.72rem", color: "var(--text-silver)", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "4px" }}>
                       Registered Address
                     </span>
-                    <p style={{ color: "#ffffff", fontSize: "0.95rem", lineHeight: 1.5 }}>
+                    <p style={{ color: "#ffffff", fontSize: "0.9rem", lineHeight: 1.5 }}>
                       Grace Plaza, SV Road, Near Railway Station, Momin Nagar, Jogeshwari West, Mumbai, Maharashtra 400102
                     </p>
                   </div>
                 </div>
 
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "16px" }}>
-                  <div style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "12px", border: "1px solid rgba(255,255,255,0.12)" }}>
-                    <Phone size={22} color="#ffffff" />
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
+                  <div style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "10px", border: "1px solid rgba(255,255,255,0.12)" }}>
+                    <Phone size={20} color="#ffffff" />
                   </div>
                   <div>
-                    <span style={{ fontSize: "0.75rem", color: "var(--text-silver)", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "4px" }}>
-                      Emergency Tax & Scrutiny Hotline
+                    <span style={{ fontSize: "0.72rem", color: "var(--text-silver)", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "4px" }}>
+                      Emergency Tax Hotline
                     </span>
-                    <a href="tel:+919819267015" style={{ color: "#ffffff", fontSize: "1.1rem", fontWeight: 700, textDecoration: "none" }}>
-                      +91 98192 67015
+                    <a href="tel:+917416414358" style={{ color: "#ffffff", fontSize: "1.05rem", fontWeight: 700, textDecoration: "none" }}>
+                      +91 7416 414 358
                     </a>
                   </div>
                 </div>
 
-                <div style={{ display: "flex", alignItems: "flex-start", gap: "16px" }}>
-                  <div style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "12px", border: "1px solid rgba(255,255,255,0.12)" }}>
-                    <Mail size={22} color="#ffffff" />
+                <div style={{ display: "flex", alignItems: "flex-start", gap: "14px" }}>
+                  <div style={{ backgroundColor: "rgba(255,255,255,0.06)", padding: "10px", border: "1px solid rgba(255,255,255,0.12)" }}>
+                    <Mail size={20} color="#ffffff" />
                   </div>
                   <div>
-                    <span style={{ fontSize: "0.75rem", color: "var(--text-silver)", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "4px" }}>
+                    <span style={{ fontSize: "0.72rem", color: "var(--text-silver)", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "4px" }}>
                       Direct Executive Email
                     </span>
-                    <a href="mailto:advisory@canikil.com" style={{ color: "#ffffff", fontSize: "1.05rem", textDecoration: "none" }}>
+                    <a href="mailto:advisory@canikil.com" style={{ color: "#ffffff", fontSize: "1rem", textDecoration: "none" }}>
                       advisory@canikil.com
                     </a>
                   </div>
@@ -176,14 +176,14 @@ export default function ContactPage() {
 
               {/* Instant WhatsApp Quick Button */}
               <a
-                href="https://wa.me/919819267015?text=Hello%20CA%20Nikil%2C%20I%20would%20like%20to%20speak%20regarding%20corporate%20tax%20advisory."
+                href="https://wa.me/917416414358?text=Hello%20CA%20Nikil%2C%20I%20would%20like%20to%20speak%20regarding%20corporate%20tax%20advisory."
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
                   backgroundColor: "#25D366",
                   color: "#ffffff",
-                  padding: "16px 28px",
-                  fontSize: "0.85rem",
+                  padding: "14px 24px",
+                  fontSize: "0.82rem",
                   fontWeight: 700,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
@@ -191,6 +191,8 @@ export default function ContactPage() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
+                  width: "100%",
+                  justifyContent: "center",
                 }}
               >
                 <MessageSquare size={18} />
@@ -200,16 +202,15 @@ export default function ContactPage() {
 
             {/* Right: Booking Form */}
             <div
+              className="card-luxury"
               style={{
-                backgroundColor: "#0d0d11",
-                border: "1px solid rgba(255, 255, 255, 0.15)",
-                padding: "40px",
+                padding: "clamp(24px, 4vw, 36px)",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.8)",
               }}
             >
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit}>
-                  <div style={{ marginBottom: "24px" }}>
+                  <div style={{ marginBottom: "20px" }}>
                     <span
                       style={{
                         fontSize: "0.72rem",
@@ -221,12 +222,12 @@ export default function ContactPage() {
                     >
                       Book 1-on-1 Session
                     </span>
-                    <h3 className="font-cinzel" style={{ fontSize: "1.6rem", color: "#ffffff", marginTop: "4px" }}>
+                    <h3 className="font-cinzel" style={{ fontSize: "1.45rem", color: "#ffffff", marginTop: "4px" }}>
                       Advisory Request Form
                     </h3>
                   </div>
 
-                  <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
                     <div>
                       <label className="luxury-label">Full Name / Entity Name *</label>
                       <input
@@ -239,7 +240,7 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "10px" }}>
                       <div>
                         <label className="luxury-label">WhatsApp Phone *</label>
                         <input
@@ -280,7 +281,7 @@ export default function ContactPage() {
                       </select>
                     </div>
 
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "10px" }}>
                       <div>
                         <label className="luxury-label">Preferred Date</label>
                         <input
@@ -309,7 +310,7 @@ export default function ContactPage() {
                     <div>
                       <label className="luxury-label">Brief Overview of Inquiry</label>
                       <textarea
-                        rows={3}
+                        rows={2}
                         placeholder="E.g., Business turnover ₹5 Cr, need statutory audit & tax optimization"
                         className="luxury-input"
                         value={formData.message}
@@ -317,35 +318,35 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <button type="submit" className="btn-gold" style={{ width: "100%", justifyContent: "center", marginTop: "8px" }}>
+                    <button type="submit" className="btn-gold" style={{ width: "100%", justifyContent: "center", marginTop: "6px" }}>
                       <span>Submit Strategy Request</span>
                       <ArrowRight size={16} />
                     </button>
                   </div>
                 </form>
               ) : (
-                <div style={{ textAlign: "center", padding: "30px 10px" }}>
+                <div style={{ textAlign: "center", padding: "20px 10px" }}>
                   <div
                     style={{
-                      width: "60px",
-                      height: "60px",
+                      width: "56px",
+                      height: "56px",
                       borderRadius: "50%",
                       backgroundColor: "rgba(184, 134, 40, 0.15)",
                       border: "1px solid #b88628",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      margin: "0 auto 16px",
+                      margin: "0 auto 14px",
                     }}
                   >
-                    <CheckCircle2 size={32} color="#b88628" />
+                    <CheckCircle2 size={30} color="#b88628" />
                   </div>
 
-                  <h3 className="font-cinzel" style={{ fontSize: "1.8rem", color: "#ffffff", marginBottom: "12px" }}>
+                  <h3 className="font-cinzel" style={{ fontSize: "1.6rem", color: "#ffffff", marginBottom: "10px" }}>
                     Request Received, {formData.name}
                   </h3>
 
-                  <p style={{ color: "var(--text-silver)", fontSize: "0.9rem", lineHeight: 1.6, marginBottom: "28px" }}>
+                  <p style={{ color: "var(--text-silver)", fontSize: "0.88rem", lineHeight: 1.6, marginBottom: "24px" }}>
                     We have logged your advisory appointment for <strong style={{ color: "#ffffff" }}>{formData.service}</strong> on{" "}
                     <strong style={{ color: "#ffffff" }}>{formData.slotDate} ({formData.slotTime})</strong>. Our senior practice manager will reach you directly on{" "}
                     <strong style={{ color: "#ffffff" }}>{formData.phone}</strong>.
@@ -357,8 +358,8 @@ export default function ContactPage() {
                       backgroundColor: "#25D366",
                       color: "#ffffff",
                       border: "none",
-                      padding: "14px 24px",
-                      fontSize: "0.85rem",
+                      padding: "14px 20px",
+                      fontSize: "0.82rem",
                       fontWeight: 700,
                       letterSpacing: "0.1em",
                       textTransform: "uppercase",
@@ -368,10 +369,10 @@ export default function ContactPage() {
                       justifyContent: "center",
                       gap: "10px",
                       width: "100%",
-                      marginBottom: "12px",
+                      marginBottom: "10px",
                     }}
                   >
-                    <MessageSquare size={18} />
+                    <MessageSquare size={16} />
                     <span>Open Instant WhatsApp Chat</span>
                   </button>
                 </div>

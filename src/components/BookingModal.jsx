@@ -61,7 +61,7 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
     const text = encodeURIComponent(
       `Hello CA Nikil & Associates,\n\nI would like to confirm a strategy session for:\n• Service: ${service}\n• Date: ${slotDate} (${slotTime})\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Query: ${formData.notes || "Tax Advisory & Compliance"}\n\nPlease share the meeting invite.`
     );
-    window.open(`https://wa.me/919819267015?text=${text}`, "_blank");
+    window.open(`https://wa.me/917416414358?text=${text}`, "_blank");
   };
 
   return (
@@ -89,11 +89,12 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
           border: "1px solid rgba(255, 255, 255, 0.18)",
           width: "100%",
           maxWidth: "600px",
-          maxHeight: "90vh",
+          maxHeight: "88vh",
           overflowY: "auto",
           position: "relative",
           boxShadow: "0 25px 60px rgba(0, 0, 0, 0.9)",
-          padding: "36px",
+          padding: "clamp(20px, 4vw, 36px)",
+          animation: "fadeUp 0.3s ease forwards",
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -102,16 +103,17 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
           onClick={onClose}
           style={{
             position: "absolute",
-            top: "20px",
-            right: "20px",
+            top: "16px",
+            right: "16px",
             background: "none",
             border: "1px solid rgba(255, 255, 255, 0.15)",
             color: "#ffffff",
-            padding: "6px",
+            padding: "8px",
             cursor: "pointer",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            zIndex: 10,
           }}
         >
           <X size={18} />
@@ -120,7 +122,7 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
         {!isSubmitted ? (
           <div>
             {/* Header */}
-            <div style={{ marginBottom: "24px" }}>
+            <div style={{ marginBottom: "20px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
                 <Shield size={14} color="#b88628" />
                 <span
@@ -138,7 +140,7 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
               <h3
                 className="font-cinzel"
                 style={{
-                  fontSize: "1.6rem",
+                  fontSize: "clamp(1.3rem, 3.5vw, 1.6rem)",
                   fontWeight: 700,
                   color: "#ffffff",
                   lineHeight: 1.2,
@@ -146,7 +148,7 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
               >
                 Schedule Private Strategy Session
               </h3>
-              <p style={{ fontSize: "0.85rem", color: "var(--text-silver)", marginTop: "6px" }}>
+              <p style={{ fontSize: "0.82rem", color: "var(--text-silver)", marginTop: "6px" }}>
                 Step {step} of 3: {step === 1 ? "Select Practice Area" : step === 2 ? "Select Slot" : "Your Details"}
               </p>
             </div>
@@ -155,7 +157,14 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
             {step === 1 && (
               <div>
                 <label className="luxury-label">Practice Area</label>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "24px" }}>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                    gap: "10px",
+                    marginBottom: "24px",
+                  }}
+                >
                   {servicesList.map((item) => (
                     <button
                       key={item}

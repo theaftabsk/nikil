@@ -2,19 +2,39 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowUpRight, Phone, ShieldCheck } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Menu, X, ArrowUpRight, Phone, MessageSquare, ShieldCheck } from "lucide-react";
 
 export default function Navbar({ onOpenBooking }) {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [mobileMenuOpen]);
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Tax Calculator", href: "/calculator" },
+    { name: "About", href: "/about" },
+    { name: "Case Studies", href: "/case-studies" },
+    { name: "Contact", href: "/contact" },
+  ];
 
   return (
     <>
@@ -24,21 +44,27 @@ export default function Navbar({ onOpenBooking }) {
           top: 0,
           left: 0,
           right: 0,
-          zIndex: 900,
-          transition: "all 0.3s ease",
-          backgroundColor: isScrolled ? "rgba(5, 5, 5, 0.95)" : "transparent",
-          backdropFilter: isScrolled ? "blur(16px)" : "none",
-          borderBottom: isScrolled ? "1px solid rgba(255, 255, 255, 0.08)" : "none",
-          padding: isScrolled ? "14px 0" : "24px 0",
+          zIndex: 990,
+          transition: "all 0.35s cubic-bezier(0.16, 1, 0.3, 1)",
+          backgroundColor: isScrolled ? "rgba(5, 5, 8, 0.96)" : "rgba(5, 5, 8, 0.6)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          borderBottom: isScrolled ? "1px solid rgba(255, 255, 255, 0.12)" : "1px solid rgba(255, 255, 255, 0.05)",
+          boxShadow: isScrolled ? "0 10px 30px rgba(0, 0, 0, 0.8)" : "none",
+          padding: isScrolled ? "12px 0" : "18px 0",
         }}
       >
         <div className="container-wide" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          {/* Signature Logo (Evan Luthra style) */}
-          <Link href="/" style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: "0px" }}>
+          {/* Handwritten Signature Logo */}
+          <Link
+            href="/"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: "0px" }}
+          >
             <span
               style={{
                 fontFamily: "'Great Vibes', 'Allura', 'Alex Brush', cursive",
-                fontSize: "2.6rem",
+                fontSize: "clamp(2.2rem, 3.5vw, 2.7rem)",
                 color: "#ffffff",
                 lineHeight: 0.85,
                 letterSpacing: "1px",
@@ -50,7 +76,7 @@ export default function Navbar({ onOpenBooking }) {
             <span
               style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: "0.6rem",
+                fontSize: "0.58rem",
                 letterSpacing: "0.26em",
                 textTransform: "uppercase",
                 color: "var(--text-silver)",
@@ -62,133 +88,80 @@ export default function Navbar({ onOpenBooking }) {
             </span>
           </Link>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links with Active Page Highlighter */}
           <nav
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "32px",
+              gap: "10px",
             }}
             className="desktop-nav"
           >
-            <Link
-              href="/"
-              style={{
-                color: "#ffffff",
-                textDecoration: "none",
-                fontSize: "0.82rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                transition: "color 0.2s",
-              }}
-            >
-              Home
-            </Link>
-            <Link
-              href="/services"
-              style={{
-                color: "var(--text-silver)",
-                textDecoration: "none",
-                fontSize: "0.82rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                transition: "color 0.2s",
-              }}
-            >
-              Services
-            </Link>
-            <Link
-              href="/calculator"
-              style={{
-                color: "var(--text-silver)",
-                textDecoration: "none",
-                fontSize: "0.82rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                transition: "color 0.2s",
-              }}
-            >
-              Tax Calculator
-            </Link>
-            <Link
-              href="/about"
-              style={{
-                color: "var(--text-silver)",
-                textDecoration: "none",
-                fontSize: "0.82rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                transition: "color 0.2s",
-              }}
-            >
-              About
-            </Link>
-            <Link
-              href="/case-studies"
-              style={{
-                color: "var(--text-silver)",
-                textDecoration: "none",
-                fontSize: "0.82rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                transition: "color 0.2s",
-              }}
-            >
-              Case Studies
-            </Link>
-            <Link
-              href="/contact"
-              style={{
-                color: "var(--text-silver)",
-                textDecoration: "none",
-                fontSize: "0.82rem",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                transition: "color 0.2s",
-              }}
-            >
-              Contact
-            </Link>
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  style={{
+                    color: isActive ? "var(--accent-champagne)" : "#ffffff",
+                    textDecoration: "none",
+                    fontSize: "0.8rem",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    fontWeight: isActive ? 700 : 500,
+                    transition: "all 0.2s ease",
+                    position: "relative",
+                    padding: "8px 14px",
+                    backgroundColor: isActive ? "rgba(184, 134, 40, 0.16)" : "transparent",
+                    border: isActive ? "1px solid rgba(184, 134, 40, 0.45)" : "1px solid transparent",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    boxShadow: isActive ? "0 0 15px rgba(184, 134, 40, 0.2)" : "none",
+                  }}
+                  className="nav-hover-link"
+                >
+                  {isActive && <span style={{ color: "var(--accent-gold)", fontSize: "0.75rem" }}>✦</span>}
+                  <span>{link.name}</span>
+                </Link>
+              );
+            })}
           </nav>
 
-          {/* Action & Mobile Toggle */}
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          {/* Desktop CTA & Mobile Toggle */}
+          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
             <button
               onClick={onOpenBooking}
               className="btn-gold desktop-btn"
-              style={{ padding: "12px 24px" }}
+              style={{ padding: "11px 22px", fontSize: "0.78rem" }}
             >
               <span>Work With Nikil</span>
-              <ArrowUpRight size={16} />
+              <ArrowUpRight size={15} />
             </button>
 
-            {/* Mobile Hamburger */}
+            {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="mobile-menu-trigger"
               style={{
-                background: "none",
-                border: "1px solid rgba(255,255,255,0.2)",
-                padding: "8px",
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                padding: "8px 12px",
                 color: "#ffffff",
                 cursor: "pointer",
                 display: "none",
+                borderRadius: "0",
               }}
-              aria-label="Toggle menu"
+              aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={22} color="#ffffff" /> : <Menu size={22} color="#ffffff" />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Slide-in Drawer */}
+      {/* Full-Screen Luxury Mobile Drawer */}
       {mobileMenuOpen && (
         <div
           style={{
@@ -197,126 +170,116 @@ export default function Navbar({ onOpenBooking }) {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "#08080a",
-            zIndex: 998,
-            padding: "80px 24px 32px",
+            backgroundColor: "#050508",
+            zIndex: 9999,
+            padding: "90px 24px 32px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
+            overflowY: "auto",
+            animation: "fadeIn 0.3s ease forwards",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <Link
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-cinzel"
-              style={{
-                color: "#ffffff",
-                textDecoration: "none",
-                fontSize: "1.4rem",
-                letterSpacing: "0.08em",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
-                paddingBottom: "12px",
-              }}
-            >
-              01. Home
-            </Link>
-            <Link
-              href="/services"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-cinzel"
-              style={{
-                color: "#ffffff",
-                textDecoration: "none",
-                fontSize: "1.4rem",
-                letterSpacing: "0.08em",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
-                paddingBottom: "12px",
-              }}
-            >
-              02. Services Catalog
-            </Link>
-            <Link
-              href="/calculator"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-cinzel"
-              style={{
-                color: "#ffffff",
-                textDecoration: "none",
-                fontSize: "1.4rem",
-                letterSpacing: "0.08em",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
-                paddingBottom: "12px",
-              }}
-            >
-              03. Tax Calculator
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-cinzel"
-              style={{
-                color: "#ffffff",
-                textDecoration: "none",
-                fontSize: "1.4rem",
-                letterSpacing: "0.08em",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
-                paddingBottom: "12px",
-              }}
-            >
-              04. About Nikil
-            </Link>
-            <Link
-              href="/case-studies"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-cinzel"
-              style={{
-                color: "#ffffff",
-                textDecoration: "none",
-                fontSize: "1.4rem",
-                letterSpacing: "0.08em",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
-                paddingBottom: "12px",
-              }}
-            >
-              05. Case Studies
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-cinzel"
-              style={{
-                color: "#ffffff",
-                textDecoration: "none",
-                fontSize: "1.4rem",
-                letterSpacing: "0.08em",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
-                paddingBottom: "12px",
-              }}
-            >
-              06. Contact & Advisory
-            </Link>
+          {/* Close trigger at top right */}
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.2)",
+              color: "#ffffff",
+              padding: "10px",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <X size={22} />
+          </button>
+
+          {/* Links List */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            {navLinks.map((link, idx) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="font-cinzel"
+                  style={{
+                    color: isActive ? "var(--accent-champagne)" : "#ffffff",
+                    textDecoration: "none",
+                    fontSize: "1.3rem",
+                    letterSpacing: "0.08em",
+                    borderBottom: "1px solid rgba(255,255,255,0.08)",
+                    paddingBottom: "12px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    backgroundColor: isActive ? "rgba(184, 134, 40, 0.12)" : "transparent",
+                    padding: "10px 14px",
+                    borderLeft: isActive ? "3px solid var(--accent-gold)" : "3px solid transparent",
+                  }}
+                >
+                  <span>
+                    0{idx + 1}. {link.name} {isActive && "(Active)"}
+                  </span>
+                  <ArrowUpRight size={18} color={isActive ? "var(--accent-gold)" : "#ffffff"} />
+                </Link>
+              );
+            })}
           </div>
 
-          <div>
+          {/* Mobile Bottom Actions */}
+          <div style={{ marginTop: "32px", display: "flex", flexDirection: "column", gap: "12px" }}>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenBooking();
               }}
               className="btn-gold"
-              style={{ width: "100%", justifyContent: "center", marginBottom: "12px" }}
+              style={{ width: "100%", justifyContent: "center", padding: "14px" }}
             >
-              Work With Nikil
+              <span>Work With Nikil</span>
+              <ArrowUpRight size={16} />
             </button>
-            <p style={{ textAlign: "center", fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: "0.1em" }}>
-              ICAI CERTIFIED • 100% CONFIDENTIAL
+
+            <a
+              href="https://wa.me/917416414358?text=Hello%20CA%20Nikil%2C%20I%20would%20like%20to%20consult%20regarding%20tax%20advisory."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline"
+              style={{
+                width: "100%",
+                justifyContent: "center",
+                padding: "14px",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                borderColor: "#25D366",
+                color: "#25D366",
+              }}
+            >
+              <MessageSquare size={16} color="#25D366" />
+              <span>WhatsApp Direct Connect</span>
+            </a>
+
+            <p style={{ textAlign: "center", fontSize: "0.72rem", color: "var(--text-muted)", letterSpacing: "0.15em", marginTop: "8px" }}>
+              ICAI CERTIFIED • 100% SECURE & CONFIDENTIAL
             </p>
           </div>
         </div>
       )}
 
       <style jsx>{`
+        .nav-hover-link:hover {
+          color: var(--accent-champagne) !important;
+          background-color: rgba(255, 255, 255, 0.05);
+        }
         @media (max-width: 991px) {
           :global(.desktop-nav),
           :global(.desktop-btn) {

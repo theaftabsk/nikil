@@ -4,7 +4,7 @@ import { MessageSquare, Phone, Calendar, ArrowUpRight } from "lucide-react";
 
 export default function FloatingActions({ onOpenBooking }) {
   const whatsappUrl =
-    "https://wa.me/919819267015?text=" +
+    "https://wa.me/917416414358?text=" +
     encodeURIComponent("Hello CA Nikil & Associates! I saw your advisory website and would like to speak regarding Tax Strategy & Compliance.");
 
   return (
@@ -25,7 +25,7 @@ export default function FloatingActions({ onOpenBooking }) {
       {/* Mobile Sticky Conversion Bar (Crucial for Meta/Instagram Ad traffic) */}
       <div className="floating-mobile-bar">
         <a
-          href="tel:+919819267015"
+          href="tel:+917416414358"
           className="btn-outline"
           style={{
             padding: "10px 14px",
