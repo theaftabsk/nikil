@@ -40,8 +40,8 @@ export default function HomePage() {
 
   const faqs = [
     {
-      q: "What makes CA Nikil & Associates different from traditional accounting firms?",
-      a: "Traditional accountants are reactive—filing your taxes only at year-end. At CA Nikil & Associates, we take a proactive, strategic advisory approach. We continuously evaluate your balance sheet, corporate structure, GST input claims, and government incentives (such as DPIIT Startup India exemptions) throughout the fiscal year to legally minimize your tax burden and protect you against scrutiny.",
+      q: "What makes GUMASTA (The Accountant) different from traditional accounting firms?",
+      a: "Traditional accountants are reactive—filing your taxes only at year-end. At GUMASTA, we take a proactive, strategic advisory approach. We continuously evaluate your balance sheet, corporate structure, GST input claims, and government incentives (such as DPIIT Startup India exemptions) throughout the fiscal year to legally minimize your tax burden and protect you against scrutiny.",
     },
     {
       q: "Can you assist with DPIIT Startup India registration and Angel Tax exemptions?",
@@ -184,7 +184,7 @@ export default function HomePage() {
                   marginBottom: "28px",
                 }}
               >
-                CA Nikil advises ambitious founders, high-growth enterprises, and HNIs. Over ₹120 Crores protected in strategic tax compliance, statutory audits, and corporate restructuring.
+                GUMASTA advises ambitious founders, high-growth enterprises, and HNIs. Over ₹120 Crores protected in strategic tax compliance, statutory audits, and corporate restructuring.
               </p>
 
               {/* Mobile Quick Action row */}
@@ -241,7 +241,7 @@ export default function HomePage() {
               </h2>
 
               <p style={{ fontSize: "0.85rem", color: "#444444", lineHeight: 1.5 }}>
-                Reserve a confidential consultation with CA Nikil to structure your entity, resolve scrutiny, or optimize fiscal liabilities.
+                Reserve a confidential consultation with GUMASTA to structure your entity, resolve scrutiny, or optimize fiscal liabilities.
               </p>
 
               <button
@@ -249,7 +249,7 @@ export default function HomePage() {
                 className="btn-gold"
                 style={{ width: "100%", justifyContent: "center", marginTop: "8px" }}
               >
-                <span>Work With Nikil</span>
+                <span>Work With Gumasta</span>
                 <ArrowRight size={16} />
               </button>
             </div>
@@ -352,7 +352,7 @@ export default function HomePage() {
               >
                 <Image
                   src="/images/nikil-portrait.jpg"
-                  alt="CA Nikil"
+                  alt="GUMASTA - The Accountant"
                   fill
                   style={{ objectFit: "cover", objectPosition: "top" }}
                 />
@@ -369,7 +369,7 @@ export default function HomePage() {
                 }}
               >
                 <p className="font-cormorant" style={{ fontSize: "1.15rem", fontStyle: "italic", lineHeight: 1.4 }}>
-                  "A great Chartered Accountant does not merely document historical numbers—they architect your future wealth."
+                  "A great accountant does not merely document historical numbers—they architect your future wealth."
                 </p>
                 <span
                   style={{
@@ -382,7 +382,7 @@ export default function HomePage() {
                     marginTop: "8px",
                   }}
                 >
-                  — CA Nikil, Managing Partner
+                  — GUMASTA, The Accountant
                 </span>
               </div>
             </div>
@@ -417,11 +417,11 @@ export default function HomePage() {
               </h2>
 
               <p style={{ fontSize: "0.95rem", color: "#333333", lineHeight: 1.7, marginBottom: "16px" }}>
-                CA Nikil established this advisory practice with a singular vision: to dismantle the antiquated, reactive model of accounting and provide founders, corporates, and high-net-worth individuals with institutional-grade financial strategy.
+                GUMASTA established this advisory practice with a singular vision: to dismantle the antiquated, reactive model of accounting and provide founders, corporates, and high-net-worth individuals with institutional-grade financial strategy.
               </p>
 
               <p style={{ fontSize: "0.95rem", color: "#555555", lineHeight: 1.7, marginBottom: "28px" }}>
-                Having steered over 500+ businesses across hospitality, technology, real estate, and export sectors, CA Nikil pairs rigorous ICAI statutory excellence with an aggressive focus on legitimate tax minimization and seamless regulatory compliance.
+                Having steered over 500+ businesses across hospitality, technology, real estate, and export sectors, GUMASTA pairs rigorous statutory excellence with an aggressive focus on legitimate tax minimization and seamless regulatory compliance.
               </p>
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "32px" }}>
@@ -447,7 +447,7 @@ export default function HomePage() {
                 onClick={() => openBookingWithService()}
                 className="btn-dark"
               >
-                <span>Consult CA Nikil</span>
+                <span>Consult GUMASTA</span>
                 <ArrowRight size={16} />
               </button>
             </div>
@@ -759,7 +759,7 @@ export default function HomePage() {
               <div>
                 <div style={{ color: "#b88628", fontSize: "1.1rem", marginBottom: "12px" }}>★★★★★</div>
                 <p style={{ color: "#333333", fontSize: "0.9rem", lineHeight: 1.6, fontStyle: "italic", marginBottom: "18px" }}>
-                  "CA Nikil restructured our restaurant chain's GST and supply chain accounting. His proactive advice saved us over ₹35 Lakhs in legitimate tax deductions during our multi-city expansion."
+                  "GUMASTA restructured our restaurant chain's GST and supply chain accounting. Their proactive advice saved us over ₹35 Lakhs in legitimate tax deductions during our multi-city expansion."
                 </p>
               </div>
               <div style={{ borderTop: "1px solid #eaeaea", paddingTop: "12px" }}>
@@ -777,7 +777,7 @@ export default function HomePage() {
               <div>
                 <div style={{ color: "#b88628", fontSize: "1.1rem", marginBottom: "12px" }}>★★★★★</div>
                 <p style={{ color: "#333333", fontSize: "0.92rem", lineHeight: 1.6, fontStyle: "italic", marginBottom: "18px" }}>
-                  "As an NRI selling ancestral property in Mumbai, navigating Section 195 Lower TDS and Form 15CA/CB felt daunting. CA Nikil's firm executed everything seamlessly, saving us huge delays."
+                  "As an NRI selling ancestral property in Mumbai, navigating Section 195 Lower TDS and Form 15CA/CB felt daunting. GUMASTA's firm executed everything seamlessly, saving us huge delays."
                 </p>
               </div>
               <div style={{ borderTop: "1px solid #eaeaea", paddingTop: "12px" }}>
@@ -795,7 +795,7 @@ export default function HomePage() {
               <div>
                 <div style={{ color: "#b88628", fontSize: "1.1rem", marginBottom: "12px" }}>★★★★★</div>
                 <p style={{ color: "#333333", fontSize: "0.9rem", lineHeight: 1.6, fontStyle: "italic", marginBottom: "18px" }}>
-                  "From Private Limited incorporation to securing DPIIT Startup India certification, Nikil and his team functioned as our outsourced CFO. Their response speed and audit rigor are unparalleled."
+                  "From Private Limited incorporation to securing DPIIT Startup India certification, GUMASTA and the team functioned as our outsourced CFO. Their response speed and audit rigor are unparalleled."
                 </p>
               </div>
               <div style={{ borderTop: "1px solid #eaeaea", paddingTop: "12px" }}>
@@ -928,7 +928,7 @@ export default function HomePage() {
           </h2>
 
           <p style={{ color: "var(--text-silver)", fontSize: "1rem", lineHeight: 1.6, marginBottom: "32px" }}>
-            Speak directly with CA Nikil. Discuss your business financials, upcoming tax deadlines, or enterprise audit requirements.
+            Speak directly with GUMASTA. Discuss your business financials, upcoming tax deadlines, or enterprise audit requirements.
           </p>
 
           <div style={{ display: "flex", justifyContent: "center", gap: "14px", flexWrap: "wrap" }}>
@@ -942,7 +942,7 @@ export default function HomePage() {
             </button>
 
             <a
-              href="https://wa.me/917416414358?text=Hello%20CA%20Nikil%2C%20I%20would%20like%20to%20book%20a%20consultation."
+              href="https://wa.me/917416414358?text=Hello%20GUMASTA%2C%20I%20would%20like%20to%20book%20a%20consultation."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"

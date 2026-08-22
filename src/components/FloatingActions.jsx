@@ -5,7 +5,7 @@ import { MessageSquare, Phone, Calendar, ArrowUpRight } from "lucide-react";
 export default function FloatingActions({ onOpenBooking }) {
   const whatsappUrl =
     "https://wa.me/917416414358?text=" +
-    encodeURIComponent("Hello CA Nikil & Associates! I saw your advisory website and would like to speak regarding Tax Strategy & Compliance.");
+    encodeURIComponent("Hello GUMASTA! I saw your website and would like to speak regarding Tax Strategy & Accounting Compliance.");
 
   return (
     <>
@@ -16,7 +16,7 @@ export default function FloatingActions({ onOpenBooking }) {
           target="_blank"
           rel="noopener noreferrer"
           className="floating-whatsapp-btn"
-          title="Direct WhatsApp with CA Nikil"
+          title="Direct WhatsApp with GUMASTA"
         >
           <MessageSquare size={26} />
         </a>

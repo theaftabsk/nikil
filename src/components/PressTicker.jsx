@@ -47,7 +47,7 @@ export default function PressTicker({ onOpenBooking }) {
         }}
         onClick={onOpenBooking}
       >
-        <span>NIKIL'S CREDENTIALS</span>
+        <span>GUMASTA'S CREDENTIALS</span>
         <ArrowRight size={16} />
       </div>
 

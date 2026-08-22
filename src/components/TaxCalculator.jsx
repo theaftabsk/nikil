@@ -359,7 +359,7 @@ export default function TaxCalculator({ onOpenBooking }) {
               className="btn-gold"
               style={{ width: "100%", justifyContent: "center" }}
             >
-              <span>Strategize Tax with CA Nikil</span>
+              <span>Strategize Tax with GUMASTA</span>
               <ArrowRight size={16} />
             </button>
             <p style={{ textAlign: "center", fontSize: "0.7rem", color: "var(--text-muted)", marginTop: "8px" }}>

@@ -81,7 +81,7 @@ export default function AboutPage() {
               >
                 <Image
                   src="/images/nikil-portrait.jpg"
-                  alt="CA Nikil"
+                  alt="GUMASTA - The Accountant"
                   fill
                   style={{ objectFit: "cover", objectPosition: "top" }}
                 />
@@ -100,7 +100,7 @@ export default function AboutPage() {
                   marginBottom: "8px",
                 }}
               >
-                Managing Partner & Founder
+                The Firm • The Accountant
               </span>
 
               <h2
@@ -112,15 +112,15 @@ export default function AboutPage() {
                   marginBottom: "20px",
                 }}
               >
-                CA NIKIL
+                GUMASTA
               </h2>
 
               <p style={{ color: "var(--text-silver)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "16px" }}>
-                CA Nikil is a Fellow Member of the Institute of Chartered Accountants of India (ICAI) with deep specialization in corporate tax planning, indirect tax litigation, statutory audits, and startup valuations.
+                GUMASTA (The Accountant) is a premier accounting and strategic advisory practice with deep specialization in corporate tax planning, indirect tax litigation, statutory audits, and startup valuations.
               </p>
 
               <p style={{ color: "var(--text-silver)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "24px" }}>
-                Over the past decade, he has acted as a trusted financial confidant to high-profile founders, real estate magnates, restaurateurs, and NRI investors across the UAE, UK, US, and Singapore. Under his leadership, the firm has successfully advised over 500+ businesses and safeguarded more than ₹120 Crores in legitimate tax deductions.
+                Over the past decade, our firm has acted as a trusted financial confidant to high-profile founders, real estate magnates, restaurateurs, and NRI investors across the UAE, UK, US, and Singapore. Under our leadership, the practice has successfully advised over 500+ businesses and safeguarded more than ₹120 Crores in legitimate tax deductions.
               </p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "32px" }}>

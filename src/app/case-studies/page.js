@@ -19,7 +19,7 @@ export default function CaseStudiesPage() {
       problem:
         "The company had grown to ₹12 Cr ARR with complex multi-currency revenue but lacked DPIIT tax exemption paperwork and had unresolved GST input mismatches, threatening an upcoming $3M Series A term sheet.",
       solution:
-        "CA Nikil's firm restructured the company's IP licensing agreements, fast-tracked DPIIT Startup India 80-IAC tax holiday certification, and audited 36 months of general ledgers to establish an investor-ready data room.",
+        "GUMASTA's team restructured the company's IP licensing agreements, fast-tracked DPIIT Startup India 80-IAC tax holiday certification, and audited 36 months of general ledgers to establish an investor-ready data room.",
       impact: [
         "100% Tax exemption secured under Section 80-IAC for consecutive fiscal years",
         "Reclaimed ₹14.8 Lakhs in unutilized Input Tax Credit (ITC)",
@@ -47,7 +47,7 @@ export default function CaseStudiesPage() {
       problem:
         "A Non-Resident Indian client residing in the UAE was selling commercial property in Mumbai and faced mandatory 23.92% flat TDS deduction without benefit of indexation.",
       solution:
-        "CA Nikil filed for a Section 197 Lower Tax Deduction Certificate with the Income Tax Department, calculated exact indexed long-term capital gains, and issued Form 15CA/15CB for smooth bank remittance.",
+        "GUMASTA filed for a Section 197 Lower Tax Deduction Certificate with the Income Tax Department, calculated exact indexed long-term capital gains, and issued Form 15CA/15CB for smooth bank remittance.",
       impact: [
         "Reduced effective tax withholding from 23.92% down to 6.2%",
         "Direct tax saving of ₹18.5 Lakhs on transaction settlement",

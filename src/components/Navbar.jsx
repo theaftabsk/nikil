@@ -71,20 +71,20 @@ export default function Navbar({ onOpenBooking }) {
                 textShadow: "0 0 20px rgba(255,255,255,0.3)",
               }}
             >
-              Nikil
+              Gumasta
             </span>
             <span
               style={{
                 fontFamily: "var(--font-sans)",
-                fontSize: "0.58rem",
+                fontSize: "0.62rem",
                 letterSpacing: "0.26em",
                 textTransform: "uppercase",
-                color: "var(--text-silver)",
-                fontWeight: 600,
+                color: "var(--accent-gold)",
+                fontWeight: 700,
                 marginTop: "4px",
               }}
             >
-              Chartered Accountants & Advisory
+              The Accountant
             </span>
           </Link>
 
@@ -136,7 +136,7 @@ export default function Navbar({ onOpenBooking }) {
               className="btn-gold desktop-btn"
               style={{ padding: "11px 22px", fontSize: "0.78rem" }}
             >
-              <span>Work With Nikil</span>
+              <span>Work With Gumasta</span>
               <ArrowUpRight size={15} />
             </button>
 
@@ -244,12 +244,12 @@ export default function Navbar({ onOpenBooking }) {
               className="btn-gold"
               style={{ width: "100%", justifyContent: "center", padding: "14px" }}
             >
-              <span>Work With Nikil</span>
+              <span>Work With Gumasta</span>
               <ArrowUpRight size={16} />
             </button>
 
             <a
-              href="https://wa.me/917416414358?text=Hello%20CA%20Nikil%2C%20I%20would%20like%20to%20consult%20regarding%20tax%20advisory."
+              href="https://wa.me/917416414358?text=Hello%20GUMASTA%20Team%2C%20I%20would%20like%20to%20consult%20regarding%20tax%20and%20accounting%20advisory."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"

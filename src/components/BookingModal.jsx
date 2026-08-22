@@ -59,7 +59,7 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
 
   const handleWhatsAppRedirect = () => {
     const text = encodeURIComponent(
-      `Hello CA Nikil & Associates,\n\nI would like to confirm a strategy session for:\n• Service: ${service}\n• Date: ${slotDate} (${slotTime})\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Query: ${formData.notes || "Tax Advisory & Compliance"}\n\nPlease share the meeting invite.`
+      `Hello GUMASTA (The Accountant),\n\nI would like to confirm a strategy session for:\n• Service: ${service}\n• Date: ${slotDate} (${slotTime})\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Query: ${formData.notes || "Tax Advisory & Compliance"}\n\nPlease share the meeting invite.`
     );
     window.open(`https://wa.me/917416414358?text=${text}`, "_blank");
   };
@@ -134,7 +134,7 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
                     color: "var(--accent-gold)",
                   }}
                 >
-                  Direct Advisory with CA Nikil
+                  Direct Advisory with GUMASTA
                 </span>
               </div>
               <h3
@@ -374,7 +374,7 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
               <strong style={{ color: "#ffffff" }}>
                 {slotDate} at {slotTime}
               </strong>{" "}
-              has been logged. CA Nikil's executive office will contact you on{" "}
+              has been logged. GUMASTA's executive advisory desk will contact you on{" "}
               <strong style={{ color: "#ffffff" }}>{formData.phone}</strong>.
             </p>
 

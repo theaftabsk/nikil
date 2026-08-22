@@ -36,7 +36,7 @@ export default function ContactPage() {
 
   const handleWhatsApp = () => {
     const text = encodeURIComponent(
-      `Hello CA Nikil & Associates,\n\nI would like to schedule an advisory call:\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Service: ${formData.service}\n• Query: ${formData.message || "Tax consultation"}`
+      `Hello GUMASTA (The Accountant),\n\nI would like to schedule an advisory call:\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Service: ${formData.service}\n• Query: ${formData.message || "Tax & Accounting consultation"}`
     );
     window.open(`https://wa.me/917416414358?text=${text}`, "_blank");
   };
@@ -81,7 +81,7 @@ export default function ContactPage() {
             SCHEDULE PRIVATE CONSULTATION
           </h1>
           <p style={{ color: "var(--text-silver)", fontSize: "1rem", lineHeight: 1.6 }}>
-            Reserve a confidential session with CA Nikil to review your corporate financials, audit requirements, or tax planning strategy.
+            Reserve a confidential session with GUMASTA to review your corporate financials, audit requirements, or tax planning strategy.
           </p>
         </div>
       </section>
@@ -167,8 +167,8 @@ export default function ContactPage() {
                     <span style={{ fontSize: "0.72rem", color: "var(--text-silver)", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "4px" }}>
                       Direct Executive Email
                     </span>
-                    <a href="mailto:advisory@canikil.com" style={{ color: "#ffffff", fontSize: "1rem", textDecoration: "none" }}>
-                      advisory@canikil.com
+                    <a href="mailto:advisory@gumasta.com" style={{ color: "#ffffff", fontSize: "1rem", textDecoration: "none" }}>
+                      advisory@gumasta.com
                     </a>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default function ContactPage() {
 
               {/* Instant WhatsApp Quick Button */}
               <a
-                href="https://wa.me/917416414358?text=Hello%20CA%20Nikil%2C%20I%20would%20like%20to%20speak%20regarding%20corporate%20tax%20advisory."
+                href="https://wa.me/917416414358?text=Hello%20GUMASTA%2C%20I%20would%20like%20to%20speak%20regarding%20corporate%20tax%20and%20accounting%20advisory."
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

@@ -34,20 +34,20 @@ export default function Footer({ onOpenBooking }) {
                   letterSpacing: "1px",
                 }}
               >
-                Nikil
+                Gumasta
               </span>
               <span
                 style={{
                   fontFamily: "var(--font-sans)",
-                  fontSize: "0.65rem",
+                  fontSize: "0.68rem",
                   letterSpacing: "0.25em",
                   textTransform: "uppercase",
-                  color: "var(--text-silver)",
-                  fontWeight: 600,
+                  color: "var(--accent-gold)",
+                  fontWeight: 700,
                   marginTop: "6px",
                 }}
               >
-                Chartered Accountants & Advisory
+                The Accountant
               </span>
             </div>
 
@@ -119,7 +119,7 @@ export default function Footer({ onOpenBooking }) {
                 Client Case Studies & ROI
               </Link>
               <Link href="/about" style={{ color: "var(--text-silver)", textDecoration: "none", fontSize: "0.85rem" }}>
-                About CA Nikil's Vision
+                About GUMASTA's Vision
               </Link>
               <button
                 onClick={onOpenBooking}
@@ -169,8 +169,8 @@ export default function Footer({ onOpenBooking }) {
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <Mail size={16} color="#ffffff" style={{ flexShrink: 0 }} />
-                <a href="mailto:advisory@canikil.com" style={{ color: "#ffffff", textDecoration: "none" }}>
-                  advisory@canikil.com
+                <a href="mailto:advisory@gumasta.com" style={{ color: "#ffffff", textDecoration: "none" }}>
+                  advisory@gumasta.com
                 </a>
               </div>
             </div>
@@ -190,7 +190,7 @@ export default function Footer({ onOpenBooking }) {
           }}
         >
           <p style={{ color: "var(--text-muted)", fontSize: "0.75rem", maxWidth: "780px" }}>
-            © {new Date().getFullYear()} CA Nikil & Associates. All rights reserved. In accordance with the Institute of Chartered Accountants of India (ICAI) guidelines, this website provides informational content regarding professional services and does not constitute advertisement or solicitation.
+            © {new Date().getFullYear()} GUMASTA • The Accountant. All rights reserved. In accordance with professional standards, this website provides informational content regarding professional services and does not constitute advertisement or solicitation.
           </p>
           <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: "0.1em" }}>
             CRAFTED FOR EXCELLENCE

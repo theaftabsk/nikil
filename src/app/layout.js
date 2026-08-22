@@ -2,15 +2,15 @@ import "./globals.css";
 import SignatureIntro from "@/components/SignatureIntro";
 
 export const metadata = {
-  title: "CA Nikil & Associates | Premier Chartered Accountants & Strategic Tax Advisors",
-  description: "Elite Chartered Accountancy & Financial Advisory firm led by CA Nikil. Specializing in High-Net-Worth Tax Strategy, Corporate Audits, Business Incorporation, GST Compliance, Virtual CFO & NRI Taxation.",
-  keywords: "Chartered Accountant, CA Nikil, Tax Consultant, Income Tax Filing, GST Registration, Corporate Audit, Startup Registration India, Virtual CFO, Trademark Registration Mumbai India",
+  title: "GUMASTA | The Accountant - Premier Financial Advisory & Tax Practice",
+  description: "GUMASTA - The Accountant. Elite Financial Advisory & Accounting firm specializing in High-Net-Worth Tax Strategy, Corporate Audits, Business Incorporation, GST Compliance, Virtual CFO & NRI Taxation.",
+  keywords: "GUMASTA, The Accountant, Chartered Accountant, Tax Consultant, Income Tax Filing, GST Registration, Corporate Audit, Startup Registration India, Virtual CFO, Trademark Registration Mumbai India",
   openGraph: {
-    title: "CA Nikil & Associates | Chartered Accountants & Strategic Tax Advisors",
+    title: "GUMASTA | The Accountant",
     description: "Strategic Financial Mastery & Elite Tax Advisory for Ambitious Businesses & High-Net-Worth Individuals.",
     type: "website",
     locale: "en_IN",
-    siteName: "CA Nikil & Associates",
+    siteName: "GUMASTA - The Accountant",
   },
 };
 

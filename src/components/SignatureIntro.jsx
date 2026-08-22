@@ -106,7 +106,7 @@ export default function SignatureIntro() {
               </filter>
             </defs>
 
-            {/* Handwritten Cursive Signature 'Nikil' with dynamic stroke draw & fill */}
+            {/* Handwritten Cursive Signature 'Gumasta' with dynamic stroke draw & fill */}
             <text
               x="50%"
               y="60%"
@@ -115,7 +115,7 @@ export default function SignatureIntro() {
               className="signature-calligraphy"
               style={{
                 fontFamily: "'Great Vibes', 'Allura', 'Alex Brush', cursive",
-                fontSize: "104px",
+                fontSize: "96px",
                 letterSpacing: "1px",
                 stroke: "url(#goldWhiteGrad)",
                 strokeWidth: "1.8px",
@@ -124,7 +124,7 @@ export default function SignatureIntro() {
                 transition: "fill 0.5s ease",
               }}
             >
-              Nikil
+              Gumasta
             </text>
 
             {/* Trailing Flourish Underline */}
@@ -154,14 +154,14 @@ export default function SignatureIntro() {
           <span
             style={{
               fontFamily: "var(--font-sans)",
-              fontSize: "0.74rem",
+              fontSize: "0.82rem",
               fontWeight: 700,
-              letterSpacing: "0.3em",
+              letterSpacing: "0.32em",
               textTransform: "uppercase",
-              color: "var(--text-silver)",
+              color: "var(--accent-gold)",
             }}
           >
-            CHARTERED ACCOUNTANTS & STRATEGIC ADVISORY
+            THE ACCOUNTANT
           </span>
         </div>
       </div>
@@ -183,7 +183,7 @@ export default function SignatureIntro() {
             color: "#666666",
           }}
         >
-          NIKIL & ASSOCIATES {new Date().getFullYear()}, ALL RIGHTS RESERVED.
+          GUMASTA • THE ACCOUNTANT {new Date().getFullYear()}, ALL RIGHTS RESERVED.
         </span>
       </div>
 
