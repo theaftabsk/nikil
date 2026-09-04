@@ -347,15 +347,18 @@ export default function HomePage() {
                 style={{
                   position: "relative",
                   width: "100%",
-                  height: "440px",
-                  boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
+                  height: "480px",
+                  border: "2px solid rgba(184, 134, 40, 0.4)",
+                  boxShadow: "0 25px 60px rgba(0,0,0,0.25), 0 0 30px rgba(184, 134, 40, 0.12)",
+                  overflow: "hidden",
+                  backgroundColor: "#f4f4f6",
                 }}
               >
                 <Image
-                  src="/images/nikil-portrait.jpg"
-                  alt="GUMASTA - The Accountant"
+                  src="/images/nikhil-portrait.png"
+                  alt="Nikhil Tamara - Founder, GUMASTA (The Accountant)"
                   fill
-                  style={{ objectFit: "cover", objectPosition: "top" }}
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
                 />
               </div>
 
@@ -364,26 +367,30 @@ export default function HomePage() {
                 style={{
                   backgroundColor: "#000000",
                   color: "#ffffff",
-                  padding: "20px 24px",
+                  padding: "22px 26px",
                   borderLeft: "4px solid #b88628",
                   marginTop: "16px",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
                 }}
               >
-                <p className="font-cormorant" style={{ fontSize: "1.15rem", fontStyle: "italic", lineHeight: 1.4 }}>
+                <p className="font-cormorant" style={{ fontSize: "1.2rem", fontStyle: "italic", lineHeight: 1.4 }}>
                   "A great accountant does not merely document historical numbers—they architect your future wealth."
                 </p>
                 <span
                   style={{
-                    fontSize: "0.72rem",
+                    fontSize: "0.75rem",
                     fontWeight: 700,
-                    letterSpacing: "0.2em",
+                    letterSpacing: "0.18em",
                     textTransform: "uppercase",
                     color: "var(--accent-gold)",
                     display: "block",
-                    marginTop: "8px",
+                    marginTop: "10px",
                   }}
                 >
-                  — GUMASTA, The Accountant
+                  — Nikhil Tamara, Founder & Managing Partner
+                </span>
+                <span style={{ fontSize: "0.68rem", color: "var(--text-silver)", letterSpacing: "0.12em", textTransform: "uppercase" }}>
+                  GUMASTA • The Accountant
                 </span>
               </div>
             </div>

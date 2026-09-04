@@ -75,15 +75,18 @@ export default function AboutPage() {
                 style={{
                   position: "relative",
                   width: "100%",
-                  height: "540px",
-                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  height: "560px",
+                  border: "2px solid rgba(184, 134, 40, 0.4)",
+                  boxShadow: "0 25px 60px rgba(0,0,0,0.8), 0 0 30px rgba(184, 134, 40, 0.15)",
+                  overflow: "hidden",
+                  backgroundColor: "#f4f4f6",
                 }}
               >
                 <Image
-                  src="/images/nikil-portrait.jpg"
-                  alt="GUMASTA - The Accountant"
+                  src="/images/nikhil-portrait.png"
+                  alt="Nikhil Tamara - Founder, GUMASTA (The Accountant)"
                   fill
-                  style={{ objectFit: "cover", objectPosition: "top" }}
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
                 />
               </div>
             </div>
@@ -100,7 +103,7 @@ export default function AboutPage() {
                   marginBottom: "8px",
                 }}
               >
-                The Firm • The Accountant
+                Founder & Managing Partner
               </span>
 
               <h2
@@ -109,37 +112,51 @@ export default function AboutPage() {
                   fontSize: "2.5rem",
                   fontWeight: 700,
                   color: "#ffffff",
+                  marginBottom: "6px",
+                }}
+              >
+                NIKHIL TAMARA
+              </h2>
+
+              <span
+                style={{
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.25em",
+                  textTransform: "uppercase",
+                  color: "var(--accent-champagne)",
+                  display: "block",
                   marginBottom: "20px",
                 }}
               >
-                GUMASTA
-              </h2>
+                GUMASTA • THE ACCOUNTANT
+              </span>
 
               <p style={{ color: "var(--text-silver)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "16px" }}>
-                GUMASTA (The Accountant) is a premier accounting and strategic advisory practice with deep specialization in corporate tax planning, indirect tax litigation, statutory audits, and startup valuations.
+                Nikhil Tamara is the visionary founder and Managing Partner behind GUMASTA (The Accountant), bringing institutional-grade precision to corporate tax planning, statutory audits, indirect tax litigation, and fast-track business valuations.
               </p>
 
               <p style={{ color: "var(--text-silver)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "24px" }}>
-                Over the past decade, our firm has acted as a trusted financial confidant to high-profile founders, real estate magnates, restaurateurs, and NRI investors across the UAE, UK, US, and Singapore. Under our leadership, the practice has successfully advised over 500+ businesses and safeguarded more than ₹120 Crores in legitimate tax deductions.
+                Over the past decade, Nikhil has acted as a trusted financial confidant to ambitious founders, high-growth enterprises, restaurateurs, and global NRI investors across the UAE, UK, US, and Singapore. Under his leadership, the firm has advised over 500+ businesses and protected more than ₹120 Crores in legitimate tax deductions.
               </p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "32px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <CheckCircle2 size={18} color="#b88628" />
-                  <span style={{ color: "#ffffff", fontSize: "0.9rem" }}>ICAI Certified & Peer-Reviewed Practice</span>
+                  <span style={{ color: "#ffffff", fontSize: "0.9rem" }}>ICAI Certified & Peer-Reviewed Advisory Practice</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <CheckCircle2 size={18} color="#b88628" />
-                  <span style={{ color: "#ffffff", fontSize: "0.9rem" }}>Registered GST & Income Tax Scrutiny Practitioner</span>
+                  <span style={{ color: "#ffffff", fontSize: "0.9rem" }}>Direct Senior Consultation with Founder Nikhil Tamara</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <CheckCircle2 size={18} color="#b88628" />
-                  <span style={{ color: "#ffffff", fontSize: "0.9rem" }}>Official Startup India DPIIT Advisory Partner</span>
+                  <span style={{ color: "#ffffff", fontSize: "0.9rem" }}>Official Startup India DPIIT 80-IAC Advisory Partner</span>
                 </div>
               </div>
 
               <button onClick={() => setIsBookingOpen(true)} className="btn-gold">
-                <span>Book 1-on-1 Strategy Session</span>
+                <span>Book 1-on-1 Session with Nikhil</span>
                 <ArrowRight size={16} />
               </button>
             </div>

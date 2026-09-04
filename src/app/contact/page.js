@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
@@ -193,11 +194,67 @@ export default function ContactPage() {
                   gap: "10px",
                   width: "100%",
                   justifyContent: "center",
+                  marginBottom: "24px",
                 }}
               >
                 <MessageSquare size={18} />
                 <span>Instant WhatsApp Strategy Chat</span>
               </a>
+
+              {/* Founder Trust Card */}
+              <div
+                style={{
+                  backgroundColor: "rgba(255, 255, 255, 0.03)",
+                  border: "1px solid rgba(184, 134, 40, 0.3)",
+                  padding: "18px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "16px",
+                }}
+              >
+                <div
+                  style={{
+                    position: "relative",
+                    width: "68px",
+                    height: "68px",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    border: "2px solid var(--accent-gold)",
+                    flexShrink: 0,
+                    backgroundColor: "#ffffff",
+                  }}
+                >
+                  <Image
+                    src="/images/nikhil-portrait.png"
+                    alt="Nikhil Tamara"
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "top" }}
+                  />
+                </div>
+                <div>
+                  <span
+                    style={{
+                      fontSize: "0.65rem",
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: "var(--accent-gold)",
+                      fontWeight: 700,
+                      display: "block",
+                    }}
+                  >
+                    Founder & Managing Partner
+                  </span>
+                  <h4
+                    className="font-cinzel"
+                    style={{ fontSize: "1.05rem", color: "#ffffff", margin: "2px 0 4px", fontWeight: 700 }}
+                  >
+                    Nikhil Tamara
+                  </h4>
+                  <p style={{ color: "var(--text-silver)", fontSize: "0.75rem", margin: 0, lineHeight: 1.4 }}>
+                    Direct senior oversight on every corporate advisory file.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Right: Booking Form */}
