@@ -8,6 +8,7 @@ import PressTicker from "@/components/PressTicker";
 import TaxCalculator from "@/components/TaxCalculator";
 import BookingModal from "@/components/BookingModal";
 import ServiceModal from "@/components/ServiceModal";
+import TaxHealthQuiz from "@/components/TaxHealthQuiz";
 import FloatingActions from "@/components/FloatingActions";
 import Footer from "@/components/Footer";
 import { servicesData } from "@/data/servicesData";
@@ -716,6 +717,47 @@ export default function HomePage() {
               <span>Emergency Tax Hotline: +91 7416 414 358</span>
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          INTERACTIVE 30-SEC TAX & COMPLIANCE HEALTH CHECK (Lead Generation Engine)
+      ========================================================================== */}
+      <section
+        style={{
+          padding: "clamp(60px, 8vw, 100px) 0",
+          backgroundColor: "#050508",
+          borderTop: "1px solid rgba(255, 255, 255, 0.08)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div className="container" style={{ maxWidth: "920px" }}>
+          <div style={{ textAlign: "center", marginBottom: "36px" }}>
+            <span
+              style={{
+                fontSize: "0.75rem",
+                letterSpacing: "0.25em",
+                textTransform: "uppercase",
+                color: "var(--accent-gold)",
+                fontWeight: 700,
+                display: "block",
+                marginBottom: "10px",
+              }}
+            >
+              Instant Risk & Savings Evaluation
+            </span>
+            <h2 className="font-cinzel" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)", fontWeight: 700, color: "#ffffff" }}>
+              DISCOVER YOUR TAX OPTIMIZATION POTENTIAL
+            </h2>
+            <p style={{ color: "var(--text-silver)", fontSize: "0.95rem", maxWidth: "620px", margin: "10px auto 0" }}>
+              Answer 3 simple questions to calculate your risk exposure and unlock your tailored financial roadmap in real-time.
+            </p>
+          </div>
+
+          {/* Interactive Diagnostic Quiz Card */}
+          <TaxHealthQuiz onOpenBooking={(svc) => openBookingWithService(svc)} />
         </div>
       </section>
 
