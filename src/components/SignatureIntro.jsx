@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 
 export default function SignatureIntro() {
   const [showIntro, setShowIntro] = useState(true);
-  const [stage, setStage] = useState(0); // 0: reveal, 1: visible, 2: fadeout
+  const [stage, setStage] = useState(0); // 0: reveal animation, 1: solid visible, 2: fadeout
 
   useEffect(() => {
-    // Stage 1: Reveal logo
+    // Stage 1: Line and subtitle reveal
     const t1 = setTimeout(() => {
       setStage(1);
     }, 700);
@@ -15,12 +15,12 @@ export default function SignatureIntro() {
     // Stage 2: Smooth fade out
     const t2 = setTimeout(() => {
       setStage(2);
-    }, 1800);
+    }, 1900);
 
-    // Stage 3: Remove from DOM
+    // Stage 3: Unmount from DOM
     const t3 = setTimeout(() => {
       setShowIntro(false);
-    }, 2300);
+    }, 2400);
 
     return () => {
       clearTimeout(t1);
@@ -52,14 +52,14 @@ export default function SignatureIntro() {
         padding: "60px 24px 40px",
         opacity: stage === 2 ? 0 : 1,
         transform: stage === 2 ? "scale(1.02)" : "scale(1)",
-        transition: "opacity 0.5s ease, transform 0.5s ease",
+        transition: "opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
         pointerEvents: stage === 2 ? "none" : "auto",
         cursor: "pointer",
       }}
     >
       <div />
 
-      {/* Clean, Sharp, Super Professional Brand Block */}
+      {/* Ultra Clean, Minimalist, Cinematic Brand Reveal */}
       <div
         style={{
           display: "flex",
@@ -67,59 +67,32 @@ export default function SignatureIntro() {
           alignItems: "center",
           textAlign: "center",
           width: "100%",
-          maxWidth: "520px",
+          maxWidth: "600px",
         }}
       >
-        {/* Minimal Gold Top Icon Badge */}
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "42px",
-            height: "42px",
-            border: "1px solid rgba(184, 134, 40, 0.5)",
-            backgroundColor: "rgba(184, 134, 40, 0.08)",
-            marginBottom: "18px",
-            transform: "rotate(45deg)",
-          }}
-        >
-          <span
-            style={{
-              transform: "rotate(-45deg)",
-              color: "#b88628",
-              fontSize: "1.1rem",
-              fontWeight: 700,
-            }}
-          >
-            ✦
-          </span>
-        </div>
-
-        {/* 100% CLEAR, CLEAN, PROFESSIONAL BRAND TITLE */}
+        {/* PURE, CLEAN, ELEGANT GUMASTA TYPOGRAPHY WITH SMOOTH EXPANSION */}
         <h1
+          className="cinematic-title"
           style={{
-            fontFamily: "'Cinzel', 'Plus Jakarta Sans', sans-serif",
-            fontSize: "clamp(2.4rem, 5.5vw, 3.8rem)",
-            fontWeight: 700,
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
+            fontFamily: "'Cinzel', 'Plus Jakarta Sans', serif",
+            fontSize: "clamp(2.5rem, 6vw, 4.2rem)",
+            fontWeight: 600,
             lineHeight: 1.1,
             color: "#ffffff",
-            margin: "0 0 10px 0",
-            textShadow: "0 2px 20px rgba(0, 0, 0, 0.8)",
+            margin: "0 0 16px 0",
+            textShadow: "0 0 35px rgba(255, 255, 255, 0.2)",
           }}
         >
           GUMASTA
         </h1>
 
-        {/* Clean Modern Divider Line */}
+        {/* Delicate Expanding Gold Hairline Divider */}
         <div
+          className="expanding-divider"
           style={{
-            width: "80px",
-            height: "2px",
-            backgroundColor: "#b88628",
-            margin: "0 auto 14px",
+            height: "1px",
+            background: "linear-gradient(90deg, transparent, #b88628, transparent)",
+            marginBottom: "16px",
           }}
         />
 
@@ -127,18 +100,18 @@ export default function SignatureIntro() {
         <div
           style={{
             opacity: stage >= 1 ? 1 : 0,
-            transform: stage >= 1 ? "translateY(0)" : "translateY(6px)",
-            transition: "opacity 0.5s ease, transform 0.5s ease",
+            transform: stage >= 1 ? "translateY(0)" : "translateY(8px)",
+            transition: "opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
           <span
             style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontSize: "clamp(0.75rem, 1.4vw, 0.9rem)",
+              fontSize: "clamp(0.75rem, 1.5vw, 0.92rem)",
               fontWeight: 700,
-              letterSpacing: "0.32em",
+              letterSpacing: "0.36em",
               textTransform: "uppercase",
-              color: "#f3e5ab",
+              color: "var(--accent-champagne)",
               display: "block",
             }}
           >
@@ -146,33 +119,33 @@ export default function SignatureIntro() {
           </span>
           <span
             style={{
-              fontSize: "0.65rem",
-              letterSpacing: "0.18em",
+              fontSize: "0.62rem",
+              letterSpacing: "0.24em",
               textTransform: "uppercase",
-              color: "#8a8a93",
+              color: "#888892",
               display: "block",
               marginTop: "8px",
               fontWeight: 500,
             }}
           >
-            Chartered Accountancy & Strategic Tax Advisory
+            Chartered Accountants & Strategic Tax Advisory
           </span>
         </div>
       </div>
 
-      {/* Bottom Copyright */}
+      {/* Bottom Minimal Copyright */}
       <div
         style={{
           textAlign: "center",
-          opacity: stage >= 1 ? 0.6 : 0,
+          opacity: stage >= 1 ? 0.5 : 0,
           transition: "opacity 0.5s ease",
         }}
       >
         <span
           style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontSize: "0.68rem",
-            letterSpacing: "0.16em",
+            fontSize: "0.65rem",
+            letterSpacing: "0.18em",
             textTransform: "uppercase",
             color: "#666666",
           }}
@@ -180,6 +153,40 @@ export default function SignatureIntro() {
           GUMASTA • THE ACCOUNTANT {new Date().getFullYear()}, ALL RIGHTS RESERVED.
         </span>
       </div>
+
+      <style jsx>{`
+        .cinematic-title {
+          animation: cinematicReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .expanding-divider {
+          width: 0px;
+          animation: expandWidth 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          animation-delay: 0.3s;
+        }
+
+        @keyframes cinematicReveal {
+          0% {
+            opacity: 0;
+            letter-spacing: 0.12em;
+            transform: translateY(6px);
+          }
+          100% {
+            opacity: 1;
+            letter-spacing: 0.26em;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes expandWidth {
+          0% {
+            width: 0px;
+          }
+          100% {
+            width: 140px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
