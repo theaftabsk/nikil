@@ -55,36 +55,40 @@ export default function Navbar({ onOpenBooking }) {
         }}
       >
         <div className="container-wide" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          {/* Handwritten Signature Logo */}
+          {/* Bold Luxury Brand Logo */}
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: "0px" }}
+            style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: "2px" }}
           >
             <span
               style={{
-                fontFamily: "'Great Vibes', 'Allura', 'Alex Brush', cursive",
-                fontSize: "clamp(2.2rem, 3.5vw, 2.7rem)",
-                color: "#ffffff",
-                lineHeight: 0.85,
-                letterSpacing: "1px",
-                textShadow: "0 0 20px rgba(255,255,255,0.3)",
+                fontFamily: "'Cinzel Decorative', 'Cinzel', serif",
+                fontSize: "clamp(1.5rem, 2.8vw, 1.95rem)",
+                fontWeight: 900,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                lineHeight: 1,
+                background: "linear-gradient(135deg, #ffffff 0%, #fdf6e2 45%, #d4af37 80%, #aa7c11 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                filter: "drop-shadow(0 0 12px rgba(212, 175, 55, 0.3))",
               }}
             >
-              Gumasta
+              GUMASTA
             </span>
             <span
               style={{
-                fontFamily: "var(--font-sans)",
-                fontSize: "0.62rem",
-                letterSpacing: "0.26em",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+                fontSize: "0.58rem",
+                letterSpacing: "0.32em",
                 textTransform: "uppercase",
-                color: "var(--accent-gold)",
-                fontWeight: 700,
-                marginTop: "4px",
+                color: "#f3e5ab",
+                fontWeight: 800,
+                marginTop: "1px",
               }}
             >
-              The Accountant
+              ✦ THE ACCOUNTANT ✦
             </span>
           </Link>
 

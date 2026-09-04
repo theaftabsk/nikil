@@ -24,30 +24,35 @@ export default function Footer({ onOpenBooking }) {
         >
           {/* Brand Col */}
           <div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0px", marginBottom: "16px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginBottom: "16px" }}>
               <span
                 style={{
-                  fontFamily: "'Great Vibes', 'Allura', 'Alex Brush', cursive",
-                  fontSize: "3rem",
-                  color: "#ffffff",
-                  lineHeight: 0.85,
-                  letterSpacing: "1px",
+                  fontFamily: "'Cinzel Decorative', 'Cinzel', serif",
+                  fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)",
+                  fontWeight: 900,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  lineHeight: 1,
+                  background: "linear-gradient(135deg, #ffffff 0%, #fdf6e2 45%, #d4af37 80%, #aa7c11 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  filter: "drop-shadow(0 0 15px rgba(212, 175, 55, 0.35))",
                 }}
               >
-                Gumasta
+                GUMASTA
               </span>
               <span
                 style={{
-                  fontFamily: "var(--font-sans)",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: "0.68rem",
-                  letterSpacing: "0.25em",
+                  letterSpacing: "0.32em",
                   textTransform: "uppercase",
-                  color: "var(--accent-gold)",
-                  fontWeight: 700,
-                  marginTop: "6px",
+                  color: "#f3e5ab",
+                  fontWeight: 800,
+                  marginTop: "3px",
                 }}
               >
-                The Accountant
+                ✦ THE ACCOUNTANT ✦
               </span>
             </div>
 

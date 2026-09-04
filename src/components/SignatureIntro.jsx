@@ -4,23 +4,23 @@ import { useState, useEffect } from "react";
 
 export default function SignatureIntro() {
   const [showIntro, setShowIntro] = useState(true);
-  const [stage, setStage] = useState(0); // 0: drawing, 1: solid fill + subtitle, 2: fadeout
+  const [stage, setStage] = useState(0); // 0: initial animation, 1: full solid glow, 2: fadeout
 
   useEffect(() => {
-    // Stage 1: signature stroke completes and fills solidly
+    // Stage 1: Reveal logo with golden light
     const t1 = setTimeout(() => {
       setStage(1);
-    }, 1400);
+    }, 1100);
 
-    // Stage 2: start fade out
+    // Stage 2: Start smooth fade out
     const t2 = setTimeout(() => {
       setStage(2);
     }, 2200);
 
-    // Stage 3: remove from DOM
+    // Stage 3: Remove from DOM
     const t3 = setTimeout(() => {
       setShowIntro(false);
-    }, 2900);
+    }, 2800);
 
     return () => {
       clearTimeout(t1);
@@ -35,7 +35,7 @@ export default function SignatureIntro() {
     <div
       onClick={() => {
         setStage(2);
-        setTimeout(() => setShowIntro(false), 500);
+        setTimeout(() => setShowIntro(false), 400);
       }}
       style={{
         position: "fixed",
@@ -43,7 +43,7 @@ export default function SignatureIntro() {
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: "#000000",
+        backgroundColor: "#050507",
         zIndex: 99999,
         display: "flex",
         flexDirection: "column",
@@ -51,16 +51,31 @@ export default function SignatureIntro() {
         justifyContent: "space-between",
         padding: "60px 24px 40px",
         opacity: stage === 2 ? 0 : 1,
-        transform: stage === 2 ? "scale(1.05)" : "scale(1)",
-        transition: "opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+        transform: stage === 2 ? "scale(1.04)" : "scale(1)",
+        transition: "opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
         pointerEvents: stage === 2 ? "none" : "auto",
         cursor: "pointer",
       }}
     >
-      {/* Top spacing */}
+      {/* Top ambient glow */}
+      <div
+        style={{
+          position: "absolute",
+          top: "30%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "480px",
+          height: "240px",
+          borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(184, 134, 40, 0.18) 0%, rgba(0,0,0,0) 70%)",
+          filter: "blur(40px)",
+          pointerEvents: "none",
+        }}
+      />
+
       <div />
 
-      {/* Center Animated Signature Box */}
+      {/* Center Bold Luxury Insignia & Brand Name */}
       <div
         style={{
           display: "flex",
@@ -68,119 +83,137 @@ export default function SignatureIntro() {
           alignItems: "center",
           textAlign: "center",
           width: "100%",
-          maxWidth: "460px",
+          maxWidth: "600px",
+          position: "relative",
+          zIndex: 2,
         }}
       >
+        {/* Decorative Gold Top Crest Diamond */}
         <div
           style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: "380px",
-            height: "140px",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            gap: "12px",
+            marginBottom: "16px",
+            opacity: stage >= 1 ? 1 : 0.4,
+            transition: "opacity 0.6s ease",
           }}
         >
-          <svg
-            viewBox="0 0 420 150"
-            style={{
-              width: "100%",
-              height: "100%",
-              overflow: "visible",
-            }}
-          >
-            <defs>
-              <linearGradient id="goldWhiteGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#ffffff" />
-                <stop offset="70%" stopColor="#ffffff" />
-                <stop offset="100%" stopColor="#f3e5ab" />
-              </linearGradient>
-
-              <filter id="sigGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="2.5" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-
-            {/* Handwritten Cursive Signature 'Gumasta' with dynamic stroke draw & fill */}
-            <text
-              x="50%"
-              y="60%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              className="signature-calligraphy"
-              style={{
-                fontFamily: "'Great Vibes', 'Allura', 'Alex Brush', cursive",
-                fontSize: "96px",
-                letterSpacing: "1px",
-                stroke: "url(#goldWhiteGrad)",
-                strokeWidth: "1.8px",
-                filter: "url(#sigGlow)",
-                fill: stage >= 1 ? "#ffffff" : "transparent",
-                transition: "fill 0.5s ease",
-              }}
-            >
-              Gumasta
-            </text>
-
-            {/* Trailing Flourish Underline */}
-            <path
-              d="M 95 105 Q 210 132 325 102"
-              fill="none"
-              stroke="url(#goldWhiteGrad)"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              className="flourish-underline"
-              style={{
-                filter: "url(#sigGlow)",
-              }}
-            />
-          </svg>
+          <div style={{ width: "40px", height: "1px", background: "linear-gradient(90deg, transparent, #b88628)" }} />
+          <span style={{ color: "var(--accent-gold)", fontSize: "0.9rem", textShadow: "0 0 10px rgba(184,134,40,0.6)" }}>✦</span>
+          <div style={{ width: "40px", height: "1px", background: "linear-gradient(90deg, #b88628, transparent)" }} />
         </div>
 
-        {/* Subtitle that gracefully fades in */}
+        {/* BOLD MAJESTIC GUMASTA LOGO */}
+        <h1
+          className="luxury-brand-title"
+          style={{
+            fontFamily: "'Cinzel Decorative', 'Cinzel', serif",
+            fontSize: "clamp(2.8rem, 6.5vw, 4.8rem)",
+            fontWeight: 900,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            lineHeight: 1.05,
+            margin: "0 0 14px 0",
+            background: "linear-gradient(135deg, #ffffff 0%, #fdf6e2 40%, #d4af37 75%, #aa7c11 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            filter: "drop-shadow(0 0 25px rgba(212, 175, 55, 0.35))",
+            animation: "revealTitle 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+          }}
+        >
+          GUMASTA
+        </h1>
+
+        {/* Trailing Gold Divider Bar */}
         <div
           style={{
-            marginTop: "16px",
+            display: "flex",
+            alignItems: "center",
+            gap: "16px",
+            width: "100%",
+            maxWidth: "360px",
+            margin: "0 auto 16px",
+          }}
+        >
+          <div
+            style={{
+              flex: 1,
+              height: "1.5px",
+              background: "linear-gradient(90deg, transparent, #d4af37)",
+            }}
+          />
+          <span
+            style={{
+              width: "6px",
+              height: "6px",
+              backgroundColor: "#d4af37",
+              transform: "rotate(45deg)",
+              boxShadow: "0 0 10px #d4af37",
+            }}
+          />
+          <div
+            style={{
+              flex: 1,
+              height: "1.5px",
+              background: "linear-gradient(90deg, #d4af37, transparent)",
+            }}
+          />
+        </div>
+
+        {/* Subtitle: THE ACCOUNTANT */}
+        <div
+          style={{
             opacity: stage >= 1 ? 1 : 0,
             transform: stage >= 1 ? "translateY(0)" : "translateY(8px)",
-            transition: "opacity 0.5s ease, transform 0.5s ease",
+            transition: "opacity 0.6s ease, transform 0.6s ease",
           }}
         >
           <span
             style={{
-              fontFamily: "var(--font-sans)",
-              fontSize: "0.82rem",
-              fontWeight: 700,
-              letterSpacing: "0.32em",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: "clamp(0.8rem, 1.6vw, 0.95rem)",
+              fontWeight: 800,
+              letterSpacing: "0.4em",
               textTransform: "uppercase",
-              color: "var(--accent-gold)",
+              color: "#f3e5ab",
+              textShadow: "0 0 15px rgba(243, 229, 171, 0.4)",
+              display: "block",
             }}
           >
             THE ACCOUNTANT
           </span>
+          <span
+            style={{
+              fontSize: "0.65rem",
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              color: "var(--text-silver)",
+              display: "block",
+              marginTop: "8px",
+              fontWeight: 600,
+            }}
+          >
+            Chartered Accountants & Strategic Corporate Advisory
+          </span>
         </div>
       </div>
 
-      {/* Bottom Copyright Text (Evan Luthra style screenshot) */}
+      {/* Bottom Copyright Text */}
       <div
         style={{
           textAlign: "center",
           opacity: stage >= 1 ? 0.6 : 0,
-          transition: "opacity 0.5s ease",
+          transition: "opacity 0.6s ease",
         }}
       >
         <span
           style={{
             fontFamily: "var(--font-sans)",
-            fontSize: "0.7rem",
+            fontSize: "0.68rem",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
-            color: "#666666",
+            color: "#888888",
           }}
         >
           GUMASTA • THE ACCOUNTANT {new Date().getFullYear()}, ALL RIGHTS RESERVED.
@@ -188,34 +221,16 @@ export default function SignatureIntro() {
       </div>
 
       <style jsx>{`
-        .signature-calligraphy {
-          stroke-dasharray: 650;
-          stroke-dashoffset: 650;
-          animation: drawText 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-
-        .flourish-underline {
-          stroke-dasharray: 300;
-          stroke-dashoffset: 300;
-          animation: drawUnderline 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-          animation-delay: 0.7s;
-        }
-
-        @keyframes drawText {
+        @keyframes revealTitle {
           0% {
-            stroke-dashoffset: 650;
+            opacity: 0;
+            transform: scale(0.92) translateY(10px);
+            letter-spacing: 0.22em;
           }
           100% {
-            stroke-dashoffset: 0;
-          }
-        }
-
-        @keyframes drawUnderline {
-          0% {
-            stroke-dashoffset: 300;
-          }
-          100% {
-            stroke-dashoffset: 0;
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            letter-spacing: 0.14em;
           }
         }
       `}</style>
