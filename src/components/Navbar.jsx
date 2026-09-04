@@ -55,7 +55,7 @@ export default function Navbar({ onOpenBooking }) {
         }}
       >
         <div className="container-wide" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          {/* Bold Luxury Brand Logo */}
+          {/* Professional Clean Brand Logo */}
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
@@ -63,16 +63,13 @@ export default function Navbar({ onOpenBooking }) {
           >
             <span
               style={{
-                fontFamily: "'Cinzel Decorative', 'Cinzel', serif",
-                fontSize: "clamp(1.5rem, 2.8vw, 1.95rem)",
-                fontWeight: 900,
-                letterSpacing: "0.1em",
+                fontFamily: "'Cinzel', 'Plus Jakarta Sans', sans-serif",
+                fontSize: "clamp(1.4rem, 2.6vw, 1.8rem)",
+                fontWeight: 700,
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 lineHeight: 1,
-                background: "linear-gradient(135deg, #ffffff 0%, #fdf6e2 45%, #d4af37 80%, #aa7c11 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                filter: "drop-shadow(0 0 12px rgba(212, 175, 55, 0.3))",
+                color: "#ffffff",
               }}
             >
               GUMASTA
@@ -81,14 +78,14 @@ export default function Navbar({ onOpenBooking }) {
               style={{
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontSize: "0.58rem",
-                letterSpacing: "0.32em",
+                letterSpacing: "0.26em",
                 textTransform: "uppercase",
-                color: "#f3e5ab",
-                fontWeight: 800,
-                marginTop: "1px",
+                color: "var(--accent-gold)",
+                fontWeight: 700,
+                marginTop: "2px",
               }}
             >
-              ✦ THE ACCOUNTANT ✦
+              THE ACCOUNTANT
             </span>
           </Link>
 
