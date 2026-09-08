@@ -122,18 +122,13 @@ export default function HomePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "auto 1fr auto",
+              gridTemplateColumns: "1fr auto",
               gap: "40px",
               alignItems: "center",
             }}
             className="hero-grid animate-fade-up"
           >
-            {/* Left Vertical Indicator */}
-            <div className="vertical-scroll-label desktop-only">
-              Scroll To Explore
-            </div>
-
-            {/* Center Authority Headline */}
+            {/* Authority Headline */}
             <div style={{ maxWidth: "760px" }}>
               <div
                 style={{

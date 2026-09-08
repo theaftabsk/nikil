@@ -136,26 +136,4 @@ export const servicesData = [
       "Cap table & current debt structure",
     ],
   },
-  {
-    id: "nri-taxation",
-    number: "07",
-    title: "NRI Taxation & Cross-Border Wealth",
-    tagline: "Global Compliance, Form 15CA/CB & DTAA Relief",
-    description:
-      "Specialized taxation and repatriation guidance for Non-Resident Indians (NRIs) and global investors managing Indian assets, property sales, and cross-border remittances.",
-    fullDescription:
-      "Navigating Indian tax residency rules, FEMA guidelines, and Double Taxation Avoidance Agreements (DTAA) requires specialist expertise. We ensure smooth fund repatriations with Form 15CA/15CB certifications and Lower TDS certificates.",
-    deliverables: [
-      "Form 15CA and Form 15CB Chartered Accountant Certifications",
-      "Lower / Nil TDS Deduction Certificates (Section 197 / 195)",
-      "Capital Gains computation on Indian real estate and equity sale",
-      "DTAA Double Taxation Relief filing & Foreign Tax Credit (FTC)",
-    ],
-    documents: [
-      "Passport, OCI / Visa copies",
-      "Tax Residency Certificate (TRC) from home country",
-      "NRE / NRO bank account statements",
-      "Property purchase & sale deeds / TDS certificates",
-    ],
-  },
 ];
