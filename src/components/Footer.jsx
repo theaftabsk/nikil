@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, ShieldCheck, Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react";
+import { ArrowUpRight, Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer({ onOpenBooking }) {
   return (
@@ -22,46 +22,7 @@ export default function Footer({ onOpenBooking }) {
             marginBottom: "60px",
           }}
         >
-          {/* Brand Col */}
-          <div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginBottom: "16px" }}>
-              <span
-                style={{
-                  fontFamily: "'Cinzel', 'Plus Jakarta Sans', sans-serif",
-                  fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  lineHeight: 1,
-                  color: "#ffffff",
-                }}
-              >
-                GUMASTA
-              </span>
-              <span
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontSize: "0.65rem",
-                  letterSpacing: "0.26em",
-                  textTransform: "uppercase",
-                  color: "var(--accent-gold)",
-                  fontWeight: 700,
-                  marginTop: "3px",
-                }}
-              >
-                THE ACCOUNTANT
-              </span>
-            </div>
 
-            <p style={{ color: "var(--text-silver)", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: "20px" }}>
-              A boutique Chartered Accountancy and Strategic Financial Advisory practice engineered for founders, high-net-worth individuals, and ambitious corporate entities.
-            </p>
-
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "var(--accent-gold)", fontSize: "0.75rem", letterSpacing: "0.1em" }}>
-              <ShieldCheck size={16} />
-              <span>ICAI REGISTERED FIRM • MUMBAI</span>
-            </div>
-          </div>
 
           {/* Practice Areas */}
           <div>
