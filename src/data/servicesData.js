@@ -136,4 +136,50 @@ export const servicesData = [
       "Cap table & current debt structure",
     ],
   },
+  {
+    id: "nri-taxation",
+    number: "07",
+    title: "NRI Taxation & Cross-Border Wealth",
+    tagline: "Global Compliance, Form 15CA/CB & DTAA Relief",
+    description:
+      "Specialized taxation and repatriation guidance for Non-Resident Indians (NRIs) and global investors managing Indian assets, property sales, and cross-border remittances.",
+    fullDescription:
+      "Navigating Indian tax residency rules, FEMA guidelines, and Double Taxation Avoidance Agreements (DTAA) requires specialist expertise. We ensure smooth fund repatriations with Form 15CA/15CB certifications and Lower TDS certificates.",
+    deliverables: [
+      "Form 15CA and Form 15CB Chartered Accountant Certifications",
+      "Lower / Nil TDS Deduction Certificates (Section 197 / 195)",
+      "Capital Gains computation on Indian real estate and equity sale",
+      "DTAA Double Taxation Relief filing & Foreign Tax Credit (FTC)",
+    ],
+    documents: [
+      "Passport, OCI / Visa copies",
+      "Tax Residency Certificate (TRC) from home country",
+      "NRE / NRO bank account statements",
+      "Property purchase & sale deeds / TDS certificates",
+    ],
+  },
+  {
+    id: "ifrs-services",
+    number: "08",
+    title: "IFRS Services",
+    tagline: "International Financial Reporting Standards & Global Convergence",
+    description:
+      "Specialized IFRS conversion, Ind-AS implementation, and global financial statement alignment for cross-border entities, multinational subsidiaries, and scaling enterprises.",
+    fullDescription:
+      "Align your financial reporting with global benchmarks. We assist growing corporations and overseas subsidiaries in adopting International Financial Reporting Standards (IFRS) and Indian Accounting Standards (Ind-AS), ensuring transparent disclosures, investor readiness, and statutory compliance.",
+    deliverables: [
+      "IFRS & Ind-AS Transition, Diagnostic Gap Analysis & Roadmap",
+      "GAAP to IFRS / US GAAP Financial Statement Conversion",
+      "Complex Financial Instruments Valuation & Accounting (IFRS 9)",
+      "Revenue Recognition (IFRS 15) & Lease Accounting (IFRS 16) Advisory",
+      "Consolidated Multi-Entity Financial Reporting & Disclosure Notes",
+    ],
+    documents: [
+      "Current Local GAAP Financial Statements & Trial Balance",
+      "Material Contracts (Commercial Leases, Vendor & Revenue Contracts)",
+      "Schedule of Investments, Loans & Complex Financial Instruments",
+      "Prior Audit Reports & Inter-company Transaction Agreements",
+    ],
+  },
 ];
+

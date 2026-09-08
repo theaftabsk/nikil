@@ -130,30 +130,6 @@ export default function HomePage() {
           >
             {/* Authority Headline */}
             <div style={{ maxWidth: "760px" }}>
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  border: "1px solid rgba(184, 134, 40, 0.4)",
-                  padding: "6px 14px",
-                  marginBottom: "20px",
-                  backgroundColor: "rgba(184, 134, 40, 0.08)",
-                }}
-              >
-                <Sparkles size={14} color="#b88628" />
-                <span
-                  style={{
-                    fontSize: "0.72rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    color: "#f3e5ab",
-                  }}
-                >
-                  ICAI Registered Practice • Mumbai & Global
-                </span>
-              </div>
 
               <h1
                 className="font-cinzel"
@@ -486,7 +462,7 @@ export default function HomePage() {
                 Core Practice Areas
               </span>
               <h2 className="font-cinzel" style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.8rem)", fontWeight: 700, color: "#ffffff" }}>
-                COMPREHENSIVE CA SERVICES
+                OUR COMPREHENSIVE SERVICES
               </h2>
             </div>
 
