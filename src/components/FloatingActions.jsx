@@ -6,18 +6,20 @@ import { MessageSquare, Phone, Calendar, X, ArrowUpRight, ShieldCheck, Sparkles,
 export default function FloatingActions({ onOpenBooking }) {
   const [chatOpen, setChatOpen] = useState(false);
   const [customMsg, setCustomMsg] = useState("");
+  const [activeWhatsAppNumber, setActiveWhatsAppNumber] = useState("919133235818");
 
   const quickTopics = [
-    { title: "⚡ Urgent GST Notice / Audit", text: "Hello GUMASTA! I received a GST/IT department notice and need urgent advisory representation." },
-    { title: "🏛️ Company / LLP Registration", text: "Hello GUMASTA! I want to incorporate a new Private Limited / LLP company and need full setup." },
-    { title: "💎 Strategic Tax Minimization", text: "Hello GUMASTA! I would like to review our financial ledgers to legally reduce our corporate/individual tax." },
-    { title: "🚀 DPIIT Startup 80-IAC Exemption", text: "Hello GUMASTA! We are looking to secure DPIIT Startup India certification and 3-year tax holiday." },
-    { title: "🌍 NRI Lower TDS & 15CA/CB", text: "Hello GUMASTA! I am an NRI selling property in India / remitting funds and require Form 15CA/CB assistance." },
+    { title: "⚡ Urgent GST Notice / Audit", text: "Hello GUMASTHA! I received a GST/IT department notice and need urgent advisory representation." },
+    { title: "🏛️ Company / LLP Registration", text: "Hello GUMASTHA! I want to incorporate a new Private Limited / LLP company and need full setup." },
+    { title: "💎 Strategic Tax Minimization", text: "Hello GUMASTHA! I would like to review our financial ledgers to legally reduce our corporate/individual tax." },
+    { title: "🚀 DPIIT Startup 80-IAC Exemption", text: "Hello GUMASTHA! We are looking to secure DPIIT Startup India certification and 3-year tax holiday." },
+    { title: "🌍 NRI Lower TDS & 15CA/CB", text: "Hello GUMASTHA! I am an NRI selling property in India / remitting funds and require Form 15CA/CB assistance." },
   ];
 
-  const handleLaunchWhatsApp = (textToSend) => {
-    const finalMsg = textToSend || customMsg || "Hello GUMASTA! I saw your advisory website and would like to schedule an advisory consultation.";
-    const url = `https://wa.me/917416414358?text=${encodeURIComponent(finalMsg)}`;
+  const handleLaunchWhatsApp = (textToSend, specificNumber) => {
+    const finalMsg = textToSend || customMsg || "Hello GUMASTHA! I saw your advisory website and would like to schedule an advisory consultation.";
+    const targetNum = specificNumber || activeWhatsAppNumber;
+    const url = `https://wa.me/${targetNum}?text=${encodeURIComponent(finalMsg)}`;
     window.open(url, "_blank");
     setChatOpen(false);
   };
@@ -64,10 +66,10 @@ export default function FloatingActions({ onOpenBooking }) {
                 />
                 <div>
                   <h4 className="font-cinzel" style={{ fontSize: "0.95rem", color: "#ffffff", margin: 0, fontWeight: 700 }}>
-                    GUMASTA Advisory Desk
+                    GUMASTHA Advisory Desk
                   </h4>
                   <span style={{ fontSize: "0.7rem", color: "var(--accent-gold)", letterSpacing: "0.05em" }}>
-                    The Accountant • Priority Support
+                    Taxation • IFRS • Business Advisory
                   </span>
                 </div>
               </div>
@@ -83,6 +85,45 @@ export default function FloatingActions({ onOpenBooking }) {
               >
                 <X size={18} />
               </button>
+            </div>
+
+            {/* WhatsApp Line Selector */}
+            <div
+              style={{
+                display: "flex",
+                gap: "6px",
+                padding: "8px 14px",
+                backgroundColor: "rgba(255,255,255,0.03)",
+                borderBottom: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              {[
+                { label: "+91 91332 35818", num: "919133235818" },
+                { label: "+91 7416 414 358", num: "917416414358" },
+              ].map((line) => (
+                <button
+                  key={line.num}
+                  onClick={() => setActiveWhatsAppNumber(line.num)}
+                  style={{
+                    flex: 1,
+                    padding: "5px 8px",
+                    fontSize: "0.72rem",
+                    fontWeight: activeWhatsAppNumber === line.num ? 700 : 500,
+                    backgroundColor: activeWhatsAppNumber === line.num ? "#25D366" : "rgba(255,255,255,0.06)",
+                    color: activeWhatsAppNumber === line.num ? "#000000" : "var(--text-silver)",
+                    border: "none",
+                    cursor: "pointer",
+                    transition: "all 0.2s ease",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "4px",
+                  }}
+                >
+                  <MessageSquare size={11} />
+                  <span>{line.label}</span>
+                </button>
+              ))}
             </div>
 
             {/* Content & Quick Chips */}

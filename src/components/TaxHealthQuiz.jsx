@@ -142,8 +142,8 @@ export default function TaxHealthQuiz({ onOpenBooking }) {
     const selectedTurnoverObj = turnoverOptions.find((t) => t.id === turnover)?.label || turnover;
     const selectedPriorityObj = priorityOptions.find((p) => p.id === priority)?.label || priority;
 
-    const message = `Hello GUMASTA (The Accountant),\n\nI just completed your 30-Second Diagnostic:\n• Entity: ${selectedEntityObj}\n• Turnover: ${selectedTurnoverObj}\n• Strategic Focus: ${selectedPriorityObj}\n• Estimated Savings: ${results.savingsRange}\n\nPlease share my tailored strategy blueprint.`;
-    window.open(`https://wa.me/917416414358?text=${encodeURIComponent(message)}`, "_blank");
+    const message = `Hello GUMASTHA,\n\nI just completed your 30-Second Diagnostic:\n• Entity: ${selectedEntityObj}\n• Turnover: ${selectedTurnoverObj}\n• Strategic Focus: ${selectedPriorityObj}\n• Estimated Savings: ${results.savingsRange}\n\nPlease share my tailored strategy blueprint.`;
+    window.open(`https://wa.me/919133235818?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (

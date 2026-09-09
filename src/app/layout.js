@@ -2,15 +2,15 @@ import "./globals.css";
 import SignatureIntro from "@/components/SignatureIntro";
 
 export const metadata = {
-  title: "GUMASTA | The Accountant - Premier Financial Advisory & Tax Practice",
-  description: "GUMASTA - The Accountant. Elite Financial Advisory & Accounting firm specializing in High-Net-Worth Tax Strategy, Corporate Audits, Business Incorporation, GST Compliance, Virtual CFO & NRI Taxation.",
-  keywords: "GUMASTA, The Accountant, Chartered Accountant, Tax Consultant, Income Tax Filing, GST Registration, Corporate Audit, Startup Registration India, Virtual CFO, Trademark Registration Mumbai India",
+  title: "GUMASTHA | Taxation • IFRS • Business Advisory Services",
+  description: "GUMASTHA - Elite Financial Advisory & Accounting firm specializing in High-Net-Worth Tax Strategy, IFRS Compliance, Corporate Audits, Business Incorporation, GST Compliance, Virtual CFO & Business Advisory Services.",
+  keywords: "GUMASTHA, Taxation, IFRS, Business Advisory Services, Chartered Accountant, Tax Consultant, Income Tax Filing, GST Registration, Corporate Audit, Startup Registration India, Virtual CFO, Trademark Registration Hyderabad India",
   openGraph: {
-    title: "GUMASTA | The Accountant",
-    description: "Strategic Financial Mastery & Elite Tax Advisory for Ambitious Businesses & High-Net-Worth Individuals.",
+    title: "GUMASTHA | Taxation • IFRS • Business Advisory Services",
+    description: "Strategic Financial Mastery & Elite Advisory for Ambitious Businesses & Corporate Entities.",
     type: "website",
     locale: "en_IN",
-    siteName: "GUMASTA - The Accountant",
+    siteName: "GUMASTHA",
   },
 };
 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight, Phone, MessageSquare, ShieldCheck } from "lucide-react";
 
@@ -30,9 +31,8 @@ export default function Navbar({ onOpenBooking }) {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "Tax Calculator", href: "/calculator" },
     { name: "About", href: "/about" },
-    { name: "Case Studies", href: "/case-studies" },
+    { name: "Tax Calculator", href: "/calculator" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -59,34 +59,67 @@ export default function Navbar({ onOpenBooking }) {
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: "2px" }}
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+            }}
           >
-            <span
+            {/* Official Brand Logo Mark */}
+            <div
               style={{
-                fontFamily: "'Cinzel', 'Plus Jakarta Sans', sans-serif",
-                fontSize: "clamp(1.4rem, 2.6vw, 1.8rem)",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-                color: "#ffffff",
+                position: "relative",
+                width: "36px",
+                height: "36px",
+                flexShrink: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
-              GUMASTA
-            </span>
-            <span
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: "0.58rem",
-                letterSpacing: "0.26em",
-                textTransform: "uppercase",
-                color: "var(--accent-gold)",
-                fontWeight: 700,
-                marginTop: "2px",
-              }}
-            >
-              THE ACCOUNTANT
-            </span>
+              <Image
+                src="/images/gumastha-emblem.png"
+                alt="GUMASTHA Official Logo"
+                width={36}
+                height={36}
+                style={{
+                  objectFit: "contain",
+                  filter: "drop-shadow(0 0 8px rgba(255,255,255,0.3))",
+                }}
+                priority
+              />
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+              <span
+                style={{
+                  fontFamily: "'Cinzel', 'Plus Jakarta Sans', sans-serif",
+                  fontSize: "clamp(1.35rem, 2.4vw, 1.75rem)",
+                  fontWeight: 800,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  lineHeight: 1,
+                  color: "#ffffff",
+                }}
+              >
+                GUMASTHA
+              </span>
+              <span
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: "0.52rem",
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "var(--accent-gold)",
+                  fontWeight: 700,
+                  marginTop: "2px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                TAXATION | IFRS | ADVISORY
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links with Active Page Highlighter */}
@@ -137,7 +170,7 @@ export default function Navbar({ onOpenBooking }) {
               className="btn-gold desktop-btn"
               style={{ padding: "11px 22px", fontSize: "0.78rem" }}
             >
-              <span>Work With Gumasta</span>
+              <span>Work With Gumastha</span>
               <ArrowUpRight size={15} />
             </button>
 
@@ -245,12 +278,12 @@ export default function Navbar({ onOpenBooking }) {
               className="btn-gold"
               style={{ width: "100%", justifyContent: "center", padding: "14px" }}
             >
-              <span>Work With Gumasta</span>
+              <span>Work With Gumastha</span>
               <ArrowUpRight size={16} />
             </button>
 
             <a
-              href="https://wa.me/917416414358?text=Hello%20GUMASTA%20Team%2C%20I%20would%20like%20to%20consult%20regarding%20tax%20and%20accounting%20advisory."
+              href="https://wa.me/919133235818?text=Hello%20GUMASTHA%20Team%2C%20I%20would%20like%20to%20consult%20regarding%20tax%20and%20accounting%20advisory."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"

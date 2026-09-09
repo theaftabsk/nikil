@@ -8,7 +8,7 @@ import BookingModal from "@/components/BookingModal";
 import ServiceModal from "@/components/ServiceModal";
 import PressTicker from "@/components/PressTicker";
 import { servicesData } from "@/data/servicesData";
-import { ArrowRight, CheckCircle2, FileText, Shield, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, FileText, Shield, Sparkles, MessageSquare } from "lucide-react";
 
 export default function ServicesPage() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -45,7 +45,7 @@ export default function ServicesPage() {
               marginBottom: "12px",
             }}
           >
-            Practice Areas & Scope of Work
+            100% Online Paperless Process • Pan-India Delivery
           </span>
           <h1
             className="font-cinzel"
@@ -57,11 +57,33 @@ export default function ServicesPage() {
               lineHeight: 1.15,
             }}
           >
-            INSTITUTIONAL CA & CORPORATE ADVISORY
+            ONLINE REGISTRATIONS & TAX COMPLIANCE
           </h1>
-          <p style={{ color: "var(--text-silver)", fontSize: "1rem", lineHeight: 1.6 }}>
-            From high-stakes income tax strategy and statutory audits to fast-track business incorporation and virtual CFO leadership.
+          <p style={{ color: "var(--text-silver)", fontSize: "1rem", lineHeight: 1.6, marginBottom: "24px" }}>
+            Fast, paperless online company incorporation, GST, trademark, ITR filing & annual compliances across India—handled end-to-end with direct Chartered Accountant expertise.
           </p>
+          <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap" }}>
+            <a
+              href="https://wa.me/919133235818?text=Hello%20GUMASTHA%2C%20I%20would%20like%20to%20know%20more%20about%20your%20online%20registration%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: "#25D366",
+                color: "#ffffff",
+                padding: "12px 24px",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                textDecoration: "none",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                boxShadow: "0 6px 20px rgba(37, 211, 102, 0.3)",
+              }}
+            >
+              <MessageSquare size={16} />
+              <span>Instant WhatsApp Inquiry (+91 91332 35818)</span>
+            </a>
+          </div>
         </div>
       </section>
 

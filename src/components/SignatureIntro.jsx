@@ -138,9 +138,9 @@ export default function SignatureIntro() {
               className="animated-brand-stroke"
               style={{
                 fontFamily: "'Cinzel', serif",
-                fontSize: "56px",
+                fontSize: "52px",
                 fontWeight: 700,
-                letterSpacing: "12px",
+                letterSpacing: "10px",
                 stroke: "url(#luxuryGoldGrad)",
                 strokeWidth: "1.4px",
                 filter: "url(#goldGlowFilter)",
@@ -148,7 +148,7 @@ export default function SignatureIntro() {
                 transition: "fill 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
             >
-              GUMASTA
+              GUMASTHA
             </text>
           </svg>
         </div>
@@ -180,7 +180,7 @@ export default function SignatureIntro() {
           <div className="line-draw-right" style={{ height: "1px", background: "linear-gradient(90deg, #b88628, transparent)" }} />
         </div>
 
-        {/* Tagline: THE ACCOUNTANT with smooth blur & rise animation */}
+        {/* Tagline: Taxation | IFRS | BUSINESS ADVISORY SERVICES with smooth blur & rise animation */}
         <div
           style={{
             opacity: stage >= 1 ? 1 : 0,
@@ -192,29 +192,16 @@ export default function SignatureIntro() {
           <span
             style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontSize: "clamp(0.78rem, 1.6vw, 0.95rem)",
+              fontSize: "clamp(0.72rem, 1.8vw, 0.95rem)",
               fontWeight: 800,
-              letterSpacing: "0.38em",
+              letterSpacing: "0.22em",
               textTransform: "uppercase",
               color: "var(--accent-champagne)",
               textShadow: "0 0 15px rgba(243, 229, 171, 0.4)",
               display: "block",
             }}
           >
-            THE ACCOUNTANT
-          </span>
-          <span
-            style={{
-              fontSize: "0.62rem",
-              letterSpacing: "0.24em",
-              textTransform: "uppercase",
-              color: "#8a8a96",
-              display: "block",
-              marginTop: "8px",
-              fontWeight: 600,
-            }}
-          >
-            Chartered Accountancy & Strategic Tax Advisory
+            Taxation | IFRS | BUSINESS ADVISORY SERVICES
           </span>
         </div>
       </div>
@@ -236,7 +223,7 @@ export default function SignatureIntro() {
             color: "#666666",
           }}
         >
-          GUMASTA • THE ACCOUNTANT {new Date().getFullYear()}, ALL RIGHTS RESERVED.
+          GUMASTHA {new Date().getFullYear()}, ALL RIGHTS RESERVED.
         </span>
       </div>
 

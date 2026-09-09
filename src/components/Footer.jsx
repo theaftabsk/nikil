@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Mail, Phone, MapPin, MessageSquare, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer({ onOpenBooking }) {
   return (
@@ -78,11 +79,8 @@ export default function Footer({ onOpenBooking }) {
               <Link href="/calculator" style={{ color: "var(--text-silver)", textDecoration: "none", fontSize: "0.85rem" }}>
                 Old vs New Tax Regime Tool
               </Link>
-              <Link href="/case-studies" style={{ color: "var(--text-silver)", textDecoration: "none", fontSize: "0.85rem" }}>
-                Client Case Studies & ROI
-              </Link>
               <Link href="/about" style={{ color: "var(--text-silver)", textDecoration: "none", fontSize: "0.85rem" }}>
-                About GUMASTA's Vision
+                About GUMASTHA
               </Link>
               <button
                 onClick={onOpenBooking}
@@ -122,18 +120,44 @@ export default function Footer({ onOpenBooking }) {
             <div style={{ display: "flex", flexDirection: "column", gap: "12px", color: "var(--text-silver)", fontSize: "0.85rem" }}>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
                 <MapPin size={16} color="#ffffff" style={{ marginTop: "3px", flexShrink: 0 }} />
-                <span>Executive Office, Momin Nagar, SV Road, Jogeshwari West, Mumbai, Maharashtra 400102</span>
+                <span>H.No: 47-003, 2nd Floor, Above Kaira, Sri Sai Colony, Hyderabad, Telangana 500037</span>
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <Phone size={16} color="#ffffff" style={{ flexShrink: 0 }} />
-                <a href="tel:+917416414358" style={{ color: "#ffffff", textDecoration: "none" }}>
-                  +91 7416 414 358
-                </a>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                <Phone size={16} color="#ffffff" style={{ marginTop: "3px", flexShrink: 0 }} />
+                <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <a href="tel:+919133235818" style={{ color: "#ffffff", textDecoration: "none" }}>
+                    +91 91332 35818
+                  </a>
+                  <a href="tel:+917416414358" style={{ color: "#ffffff", textDecoration: "none" }}>
+                    +91 7416 414 358
+                  </a>
+                </div>
+              </div>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: "10px" }}>
+                <MessageSquare size={16} color="#25D366" style={{ marginTop: "3px", flexShrink: 0 }} />
+                <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                  <a
+                    href="https://wa.me/919133235818?text=Hello%20GUMASTHA%20Team%2C%20I%20would%20like%20to%20consult%20regarding%20taxation%20and%20advisory."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "#25D366", textDecoration: "none", fontWeight: 600 }}
+                  >
+                    WhatsApp: +91 91332 35818
+                  </a>
+                  <a
+                    href="https://wa.me/917416414358?text=Hello%20GUMASTHA%20Team%2C%20I%20would%20like%20to%20consult%20regarding%20taxation%20and%20advisory."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: "#25D366", textDecoration: "none", fontWeight: 600 }}
+                  >
+                    WhatsApp: +91 7416 414 358
+                  </a>
+                </div>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <Mail size={16} color="#ffffff" style={{ flexShrink: 0 }} />
-                <a href="mailto:advisory@gumasta.com" style={{ color: "#ffffff", textDecoration: "none" }}>
-                  advisory@gumasta.com
+                <a href="mailto:advisory@gumastha.co.in" style={{ color: "#ffffff", textDecoration: "none" }}>
+                  advisory@gumastha.co.in
                 </a>
               </div>
             </div>
@@ -153,7 +177,7 @@ export default function Footer({ onOpenBooking }) {
           }}
         >
           <p style={{ color: "var(--text-muted)", fontSize: "0.75rem", maxWidth: "780px" }}>
-            © {new Date().getFullYear()} GUMASTA • The Accountant. All rights reserved. In accordance with professional standards, this website provides informational content regarding professional services and does not constitute advertisement or solicitation.
+            © {new Date().getFullYear()} GUMASTHA • Taxation | IFRS | Business Advisory Services. All rights reserved. In accordance with professional standards, this website provides informational content regarding professional services and does not constitute advertisement or solicitation.
           </p>
           <span style={{ fontSize: "0.75rem", color: "var(--text-muted)", letterSpacing: "0.1em" }}>
             CRAFTED FOR EXCELLENCE

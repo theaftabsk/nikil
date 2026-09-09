@@ -20,26 +20,47 @@ export default function ContactPage() {
     message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone) {
       alert("Please enter your name and contact phone number");
       return;
     }
-    confetti({
-      particleCount: 70,
-      spread: 60,
-      origin: { y: 0.6 },
-    });
-    setIsSubmitted(true);
+    
+    setLoading(true);
+    try {
+      await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          service: formData.service,
+          message: `${formData.message || "Advisory consultation requested"} | Slot: ${formData.slotDate || "Flexible"} (${formData.slotTime || "Standard"})`,
+          source: "Contact Page Advisory Form",
+        }),
+      });
+    } catch (err) {
+      console.error("Submission error:", err);
+    } finally {
+      setLoading(false);
+      confetti({
+        particleCount: 70,
+        spread: 60,
+        origin: { y: 0.6 },
+      });
+      setIsSubmitted(true);
+    }
   };
 
   const handleWhatsApp = () => {
     const text = encodeURIComponent(
-      `Hello GUMASTA (The Accountant),\n\nI would like to schedule an advisory call:\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Service: ${formData.service}\n• Query: ${formData.message || "Tax & Accounting consultation"}`
+      `Hello GUMASTHA,\n\nI would like to schedule an advisory call:\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Service: ${formData.service}\n• Query: ${formData.message || "Tax & Accounting consultation"}`
     );
-    window.open(`https://wa.me/917416414358?text=${text}`, "_blank");
+    window.open(`https://wa.me/919133235818?text=${text}`, "_blank");
   };
 
   return (
@@ -82,7 +103,7 @@ export default function ContactPage() {
             SCHEDULE PRIVATE CONSULTATION
           </h1>
           <p style={{ color: "var(--text-silver)", fontSize: "1rem", lineHeight: 1.6 }}>
-            Reserve a confidential session with GUMASTA to review your corporate financials, audit requirements, or tax planning strategy.
+            Reserve a confidential session with GUMASTHA to review your corporate financials, audit requirements, or tax planning strategy.
           </p>
         </div>
       </section>
@@ -124,11 +145,11 @@ export default function ContactPage() {
                   marginBottom: "18px",
                 }}
               >
-                MUMBAI OFFICE
+                HYDERABAD OFFICE
               </h2>
 
               <p style={{ color: "var(--text-silver)", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: "28px" }}>
-                Our corporate advisory practice is headquartered in Mumbai, serving domestic corporate entities and global NRI clients with seamless remote and in-person advisory.
+                Our corporate advisory practice is headquartered in Hyderabad, serving domestic corporate entities and global NRI clients with seamless remote and in-person advisory.
               </p>
 
               <div style={{ display: "flex", flexDirection: "column", gap: "20px", marginBottom: "32px" }}>
@@ -141,7 +162,7 @@ export default function ContactPage() {
                       Registered Address
                     </span>
                     <p style={{ color: "#ffffff", fontSize: "0.9rem", lineHeight: 1.5 }}>
-                      Grace Plaza, SV Road, Near Railway Station, Momin Nagar, Jogeshwari West, Mumbai, Maharashtra 400102
+                      H.No: 47-003, 2nd Floor, Above Kaira, Sri Sai Colony, Hyderabad, Telangana 500037
                     </p>
                   </div>
                 </div>
@@ -154,9 +175,14 @@ export default function ContactPage() {
                     <span style={{ fontSize: "0.72rem", color: "var(--text-silver)", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "4px" }}>
                       Emergency Tax Hotline
                     </span>
-                    <a href="tel:+917416414358" style={{ color: "#ffffff", fontSize: "1.05rem", fontWeight: 700, textDecoration: "none" }}>
-                      +91 7416 414 358
-                    </a>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
+                      <a href="tel:+919133235818" style={{ color: "#ffffff", fontSize: "1.05rem", fontWeight: 700, textDecoration: "none" }}>
+                        +91 91332 35818
+                      </a>
+                      <a href="tel:+917416414358" style={{ color: "#ffffff", fontSize: "1.05rem", fontWeight: 700, textDecoration: "none" }}>
+                        +91 7416 414 358
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -168,38 +194,65 @@ export default function ContactPage() {
                     <span style={{ fontSize: "0.72rem", color: "var(--text-silver)", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "4px" }}>
                       Direct Executive Email
                     </span>
-                    <a href="mailto:advisory@gumasta.com" style={{ color: "#ffffff", fontSize: "1rem", textDecoration: "none" }}>
-                      advisory@gumasta.com
+                    <a href="mailto:advisory@gumastha.co.in" style={{ color: "#ffffff", fontSize: "1rem", textDecoration: "none" }}>
+                      advisory@gumastha.co.in
                     </a>
                   </div>
                 </div>
               </div>
 
-              {/* Instant WhatsApp Quick Button */}
-              <a
-                href="https://wa.me/917416414358?text=Hello%20GUMASTA%2C%20I%20would%20like%20to%20speak%20regarding%20corporate%20tax%20and%20accounting%20advisory."
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  backgroundColor: "#25D366",
-                  color: "#ffffff",
-                  padding: "14px 24px",
-                  fontSize: "0.82rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  textDecoration: "none",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  width: "100%",
-                  justifyContent: "center",
-                  marginBottom: "24px",
-                }}
-              >
-                <MessageSquare size={18} />
-                <span>Instant WhatsApp Strategy Chat</span>
-              </a>
+              {/* Instant WhatsApp Quick Buttons */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "24px" }}>
+                <a
+                  href="https://wa.me/919133235818?text=Hello%20GUMASTHA%2C%20I%20would%20like%20to%20speak%20regarding%20corporate%20tax%20and%20accounting%20advisory."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    backgroundColor: "#25D366",
+                    color: "#ffffff",
+                    padding: "14px 20px",
+                    fontSize: "0.82rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    textDecoration: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    width: "100%",
+                    justifyContent: "center",
+                    boxShadow: "0 6px 20px rgba(37, 211, 102, 0.25)",
+                  }}
+                >
+                  <MessageSquare size={18} />
+                  <span>WhatsApp: +91 91332 35818</span>
+                </a>
+
+                <a
+                  href="https://wa.me/917416414358?text=Hello%20GUMASTHA%2C%20I%20would%20like%20to%20speak%20regarding%20corporate%20tax%20and%20accounting%20advisory."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    backgroundColor: "rgba(37, 211, 102, 0.1)",
+                    border: "1px solid #25D366",
+                    color: "#25D366",
+                    padding: "12px 20px",
+                    fontSize: "0.82rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    textDecoration: "none",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    width: "100%",
+                    justifyContent: "center",
+                  }}
+                >
+                  <MessageSquare size={18} />
+                  <span>WhatsApp: +91 7416 414 358</span>
+                </a>
+              </div>
 
               {/* Founder Trust Card */}
               <div
@@ -215,20 +268,25 @@ export default function ContactPage() {
                 <div
                   style={{
                     position: "relative",
-                    width: "68px",
-                    height: "68px",
+                    width: "60px",
+                    height: "60px",
                     borderRadius: "50%",
                     overflow: "hidden",
                     border: "2px solid var(--accent-gold)",
                     flexShrink: 0,
-                    backgroundColor: "#ffffff",
+                    backgroundColor: "#050508",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "10px",
                   }}
                 >
                   <Image
-                    src="/images/nikhil-portrait.png"
-                    alt="Nikhil Tamara"
-                    fill
-                    style={{ objectFit: "cover", objectPosition: "top" }}
+                    src="/images/gumastha-emblem.png"
+                    alt="GUMASTHA Official Emblem"
+                    width={40}
+                    height={40}
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
                 <div>
@@ -242,16 +300,16 @@ export default function ContactPage() {
                       display: "block",
                     }}
                   >
-                    Founder & Managing Partner
+                    Senior Advisory Desk
                   </span>
                   <h4
                     className="font-cinzel"
                     style={{ fontSize: "1.05rem", color: "#ffffff", margin: "2px 0 4px", fontWeight: 700 }}
                   >
-                    Nikhil Tamara
+                    GUMASTHA Advisory
                   </h4>
                   <p style={{ color: "var(--text-silver)", fontSize: "0.75rem", margin: 0, lineHeight: 1.4 }}>
-                    Direct senior oversight on every corporate advisory file.
+                    Direct senior oversight on every accounting, tax & corporate file.
                   </p>
                 </div>
               </div>
@@ -375,8 +433,13 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <button type="submit" className="btn-gold" style={{ width: "100%", justifyContent: "center", marginTop: "6px" }}>
-                      <span>Submit Strategy Request</span>
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="btn-gold"
+                      style={{ width: "100%", justifyContent: "center", marginTop: "6px", opacity: loading ? 0.7 : 1, cursor: loading ? "wait" : "pointer" }}
+                    >
+                      <span>{loading ? "Sending Enquiry..." : "Submit Strategy Request"}</span>
                       <ArrowRight size={16} />
                     </button>
                   </div>
@@ -400,13 +463,17 @@ export default function ContactPage() {
                   </div>
 
                   <h3 className="font-cinzel" style={{ fontSize: "1.6rem", color: "#ffffff", marginBottom: "10px" }}>
-                    Request Received, {formData.name}
+                    Enquiry Received, {formData.name}
                   </h3>
 
                   <p style={{ color: "var(--text-silver)", fontSize: "0.88rem", lineHeight: 1.6, marginBottom: "24px" }}>
-                    We have logged your advisory appointment for <strong style={{ color: "#ffffff" }}>{formData.service}</strong> on{" "}
-                    <strong style={{ color: "#ffffff" }}>{formData.slotDate} ({formData.slotTime})</strong>. Our senior practice manager will reach you directly on{" "}
-                    <strong style={{ color: "#ffffff" }}>{formData.phone}</strong>.
+                    We have logged your advisory enquiry for <strong style={{ color: "#ffffff" }}>{formData.service}</strong>.
+                    {formData.email && (
+                      <span style={{ display: "block", color: "var(--accent-gold)", marginTop: "6px" }}>
+                        ✓ A confirmation email has been sent to {formData.email}.
+                      </span>
+                    )}
+                    Our executive desk will reach you shortly on <strong style={{ color: "#ffffff" }}>{formData.phone}</strong>.
                   </p>
 
                   <button

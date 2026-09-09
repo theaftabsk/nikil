@@ -131,6 +131,13 @@ export default function HomePage() {
             {/* Authority Headline */}
             <div style={{ maxWidth: "760px" }}>
 
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", backgroundColor: "rgba(184, 134, 40, 0.12)", border: "1px solid rgba(184, 134, 40, 0.35)", padding: "6px 14px", marginBottom: "16px" }}>
+                <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#25D366" }} />
+                <span style={{ fontSize: "0.72rem", color: "var(--accent-gold)", letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 700 }}>
+                  100% Online Paperless Process • Pan-India Delivery
+                </span>
+              </div>
+
               <h1
                 className="font-cinzel"
                 style={{
@@ -143,7 +150,7 @@ export default function HomePage() {
                   textTransform: "uppercase",
                 }}
               >
-                STRATEGIC TAX ADVISOR & CHARTERED ACCOUNTANT
+                ONLINE BUSINESS REGISTRATION & TAX ADVISORY
               </h1>
 
               <p
@@ -156,11 +163,31 @@ export default function HomePage() {
                   marginBottom: "28px",
                 }}
               >
-                GUMASTA advises ambitious founders, high-growth enterprises, and HNIs. Over ₹120 Crores protected in strategic tax compliance, statutory audits, and corporate restructuring.
+                GUMASTHA operates as a premier digital platform for company incorporation (Pvt Ltd / LLP), GST, trademark, ITR filing, and corporate compliance across India. 100% online, paperless, and fast—with direct senior Chartered Accountant guidance.
               </p>
 
-              {/* Mobile Quick Action row */}
-              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }} className="hero-mobile-actions">
+              {/* Action row */}
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }} className="hero-mobile-actions">
+                <a
+                  href="https://wa.me/919133235818?text=Hello%20GUMASTHA%2C%20I%20want%20to%20register%20a%20company%20/%20avail%20online%20tax%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    backgroundColor: "#25D366",
+                    color: "#ffffff",
+                    padding: "14px 22px",
+                    fontWeight: 700,
+                    fontSize: "0.85rem",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    textDecoration: "none",
+                    boxShadow: "0 6px 20px rgba(37, 211, 102, 0.3)",
+                  }}
+                >
+                  <MessageSquare size={16} />
+                  <span>Chat on WhatsApp</span>
+                </a>
                 <button
                   onClick={() => openBookingWithService()}
                   className="btn-gold"
@@ -169,7 +196,7 @@ export default function HomePage() {
                   <ArrowRight size={16} />
                 </button>
                 <Link href="/services" className="btn-outline">
-                  <span>Explore Practice Areas</span>
+                  <span>Explore Online Services</span>
                 </Link>
               </div>
             </div>
@@ -691,8 +718,8 @@ export default function HomePage() {
               <span>Schedule Strategy Call</span>
               <ArrowRight size={16} />
             </button>
-            <a href="tel:+917416414358" className="btn-outline">
-              <span>Emergency Tax Hotline: +91 7416 414 358</span>
+            <a href="tel:+919133235818" className="btn-outline">
+              <span>Hotline: +91 91332 35818 / +91 7416 414 358</span>
             </a>
           </div>
         </div>
@@ -962,7 +989,7 @@ export default function HomePage() {
             </button>
 
             <a
-              href="https://wa.me/917416414358?text=Hello%20GUMASTA%2C%20I%20would%20like%20to%20book%20a%20consultation."
+              href="https://wa.me/919133235818?text=Hello%20GUMASTHA%2C%20I%20would%20like%20to%20book%20a%20consultation."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"

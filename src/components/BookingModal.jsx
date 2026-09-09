@@ -40,28 +40,47 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
     "06:00 PM - 06:45 PM (VIP)",
   ];
 
-  const handleSubmit = (e) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone) {
       alert("Please enter your name and phone number");
       return;
     }
 
-    // Trigger confetti celebration
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.6 },
-    });
-
-    setIsSubmitted(true);
+    setLoading(true);
+    try {
+      await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          service: service,
+          message: `${formData.notes || "Consultation session booked"} | Slot: ${slotDate} at ${slotTime}`,
+          source: "1-on-1 Consultation Booking Modal",
+        }),
+      });
+    } catch (err) {
+      console.error("Booking submission error:", err);
+    } finally {
+      setLoading(false);
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+      setIsSubmitted(true);
+    }
   };
 
-  const handleWhatsAppRedirect = () => {
+  const handleWhatsAppRedirect = (num = "919133235818") => {
     const text = encodeURIComponent(
-      `Hello GUMASTA (The Accountant),\n\nI would like to confirm a strategy session for:\n• Service: ${service}\n• Date: ${slotDate} (${slotTime})\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Query: ${formData.notes || "Tax Advisory & Compliance"}\n\nPlease share the meeting invite.`
+      `Hello GUMASTHA,\n\nI would like to confirm a strategy session for:\n• Service: ${service}\n• Date: ${slotDate} (${slotTime})\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Query: ${formData.notes || "Tax Advisory & Compliance"}\n\nPlease share the meeting invite.`
     );
-    window.open(`https://wa.me/917416414358?text=${text}`, "_blank");
+    window.open(`https://wa.me/${num}?text=${text}`, "_blank");
   };
 
   return (
@@ -134,7 +153,7 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
                     color: "var(--accent-gold)",
                   }}
                 >
-                  Direct Advisory with GUMASTA
+                  Direct Advisory with GUMASTHA
                 </span>
               </div>
               <h3
@@ -324,10 +343,11 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
                   </button>
                   <button
                     type="submit"
+                    disabled={loading}
                     className="btn-gold"
-                    style={{ flex: 2, justifyContent: "center" }}
+                    style={{ flex: 2, justifyContent: "center", opacity: loading ? 0.7 : 1, cursor: loading ? "not-allowed" : "pointer" }}
                   >
-                    Confirm Strategy Session
+                    {loading ? "Sending Confirmation..." : "Confirm Strategy Session"}
                   </button>
                 </div>
               </form>
@@ -369,18 +389,37 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
               Thank You, {formData.name}
             </h3>
 
-            <p style={{ color: "var(--text-silver)", fontSize: "0.9rem", maxWidth: "440px", margin: "0 auto 24px" }}>
+            <p style={{ color: "var(--text-silver)", fontSize: "0.9rem", maxWidth: "440px", margin: "0 auto 16px" }}>
               Your session for <strong style={{ color: "#ffffff" }}>{service}</strong> on{" "}
               <strong style={{ color: "#ffffff" }}>
                 {slotDate} at {slotTime}
               </strong>{" "}
-              has been logged. GUMASTA's executive advisory desk will contact you on{" "}
+              has been logged. GUMASTHA's executive advisory desk will contact you on{" "}
               <strong style={{ color: "#ffffff" }}>{formData.phone}</strong>.
             </p>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            {formData.email && (
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  padding: "8px 16px",
+                  backgroundColor: "rgba(184, 134, 40, 0.12)",
+                  border: "1px solid rgba(184, 134, 40, 0.3)",
+                  borderRadius: "4px",
+                  fontSize: "0.8rem",
+                  color: "#f3e5ab",
+                  marginBottom: "20px",
+                }}
+              >
+                <span>✓ Confirmation email sent to <strong>{formData.email}</strong></span>
+              </div>
+            )}
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               <button
-                onClick={handleWhatsAppRedirect}
+                onClick={() => handleWhatsAppRedirect("919133235818")}
                 style={{
                   backgroundColor: "#25D366",
                   color: "#ffffff",
@@ -388,7 +427,7 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
                   padding: "14px 20px",
                   fontSize: "0.85rem",
                   fontWeight: 700,
-                  letterSpacing: "0.1em",
+                  letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   cursor: "pointer",
                   display: "flex",
@@ -398,7 +437,29 @@ export default function BookingModal({ isOpen, onClose, initialService = "" }) {
                 }}
               >
                 <MessageSquare size={18} />
-                <span>Instant Connect on WhatsApp Now</span>
+                <span>Confirm on WhatsApp (+91 91332 35818)</span>
+              </button>
+
+              <button
+                onClick={() => handleWhatsAppRedirect("917416414358")}
+                style={{
+                  backgroundColor: "rgba(37, 211, 102, 0.1)",
+                  border: "1px solid #25D366",
+                  color: "#25D366",
+                  padding: "12px 20px",
+                  fontSize: "0.82rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "10px",
+                }}
+              >
+                <MessageSquare size={16} />
+                <span>Alternate WhatsApp (+91 7416 414 358)</span>
               </button>
 
               <button
